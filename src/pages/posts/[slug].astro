@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DateTime from '../../components/DateTime.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+
+  return blogEntries.map((entry) => {
+    return {
+      params: { slug: entry.slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <main>
+    <header>
+      <h1 class="text-5xl text-teal-400 font-bold">{entry.data.title}</h1>
+      <DateTime value={entry.data.date} />
+    </header>
+    <div class="h-8"></div>
+    <article class="post">
+      <Content />
+    </article>
+  </main>
+</Layout>
