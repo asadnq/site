@@ -3,52 +3,60 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { getCollection } from 'astro:content';
 import DateTime from '../components/DateTime.astro';
+import { Tabs } from '../components/Tabs';
+import Posts from '../components/Posts.astro';
 
 const blogPosts = await getCollection('blog');
+
+const slugToTitle = (str: string) =>
+  str.replaceAll(/-/g, ' ').replace(/\w{1}/, str[0].toUpperCase());
+
+const sections: { slug: string; description: string }[] = [
+  {
+    slug: 'posts',
+    description: 'Posts',
+  },
+  {
+    slug: 'book-reviews',
+    description: 'Book reviews',
+  },
+  {
+    slug: 'about-me',
+    description: 'About me',
+  },
+];
 ---
 
 <Layout title="Asadnq">
-  <header>
-    <h1 class="text-4xl font-bold heading">ASADNQ</h1>
-    <p class="text-xl font-semibold sub-heading text-white">
-      Software developer at
-      <a class="text-blue-300" href="https://www.cloudthought.co/"
-        >CloudThought</a
-      >
-    </p>
+  <header class="flex flex-row justify-between">
+    <hgroup>
+      <h1 class="text-5xl font-bold text-primary site-title font-sans">
+        ASADNQ
+      </h1>
+      <p class="text-lg font-semibold text-white">
+        Software developer at
+        <a href="https://www.cloudthought.co/">CloudThought</a>
+      </p>
+    </hgroup>
+    <figure>
+      <div class="bg-slate-600 w-[140px] h-[140px] rounded-full"></div>
+      <figcaption></figcaption>
+    </figure>
   </header>
-  <main class="pt-6">
-    {
-      blogPosts.map(({ data, slug }) => (
-        <article>
-          <a href={`/posts/${slug}`}>
-            <header>
-              <h3 class="text-3xl font-bold text-teal-300">{data.title}</h3>
-              <DateTime value={data.date} />
-            </header>
-            <p class="text-lg font-bold text-white">{data.subtitle}</p>
-          </a>
-        </article>
-      ))
-    }
+  <main class="py-6 h-screen">
+    <Tabs client:visible>
+      <!-- <h1 slot="posts">Posts</h1> -->
+      <Posts slot="posts" />
+
+      <h1 slot="aboutMe">About me</h1>
+
+      <h1 slot="bookReviews">book reviews</h1>
+    </Tabs>
   </main>
 </Layout>
 
 <style>
-  main {
-    /* background-color: #30254d; */
-    /* background-color: #323f95; */
-    /* background-color: #212d62; */
-    height: 100vh;
-  }
-  .heading {
-    font-family: 'Bebas Neue', sans-serif;
-    color: #7ec7cc;
-    letter-spacing: 0.053em;
-  }
-
-  .card {
-    color: #a7add3;
-    background-color: #232b58;
+  .site-title {
+    font-family: 'Bebas Neue';
   }
 </style>

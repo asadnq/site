@@ -24,8 +24,8 @@ import '../styles/utils.css';
     />
     <title>{title}</title>
   </head>
-  <body>
-    <div class="mx-auto max-w-xl pt-9 min-h-screen">
+  <body class="min-h-screen text-white bg-dark-surface">
+    <div class="mx-auto max-w-xl pt-6 px-4">
       <slot />
     </div>
     <footer></footer>
@@ -40,10 +40,6 @@ import '../styles/utils.css';
       #da62c4 30%,
       white 60%
     );
-  }
-  body {
-    /* background-color: #4378bc; */
-    background-color: #1a3861;
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
