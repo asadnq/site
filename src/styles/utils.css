@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  a {
+  .link {
     @apply text-secondary underline underline-offset-4;
   }
+
   h1 {
     @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
   }
 
   h3 {
@@ -16,6 +21,10 @@
 
   div {
     @apply rounded-md;
+  }
+
+  hgroup {
+    @apply leading-8;
   }
 }
 

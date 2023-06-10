@@ -3,7 +3,7 @@ const colors = {
   mint: '#64b993',
   denim: '#205caa',
   // 'oxford-blue': '#00223d',
-  'oxford-blue': '#00203a',
+  'oxford-blue': '#00223d',
   'columbia-blue': '#d6edff',
 };
 
@@ -20,6 +20,9 @@ module.exports = {
         secondary: colors['mint'],
         tertiary: colors['denim'],
         'dark-surface': colors['oxford-blue'],
+
+        // 'dark-surface-2': '#00203a',
+        'dark-surface-2': ' #011a2f',
       },
     },
     fontFamily: {
