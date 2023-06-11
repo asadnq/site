@@ -1,30 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import { getCollection } from 'astro:content';
-import DateTime from '../components/DateTime.astro';
 import { Tabs } from '../components/Tabs';
 import Posts from '../components/Posts.astro';
-
-const blogPosts = await getCollection('blog');
-
-const slugToTitle = (str: string) =>
-  str.replaceAll(/-/g, ' ').replace(/\w{1}/, str[0].toUpperCase());
-
-const sections: { slug: string; description: string }[] = [
-  {
-    slug: 'posts',
-    description: 'Posts',
-  },
-  {
-    slug: 'book-reviews',
-    description: 'Book reviews',
-  },
-  {
-    slug: 'about-me',
-    description: 'About me',
-  },
-];
 ---
 
 <Layout title="Asadnq">
@@ -44,8 +21,8 @@ const sections: { slug: string; description: string }[] = [
     </figure>
   </header>
   <main class="py-6">
+    <!-- TODO: Fix -->
     <Tabs client:visible>
-      <!-- <h1 slot="posts">Posts</h1> -->
       <Posts slot="posts" />
 
       <h1 slot="aboutMe">About me</h1>

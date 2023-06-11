@@ -17,7 +17,7 @@ const blogPosts = await getCollection('blog');
 		{
 			blogPosts.map(({ data, slug }) => {
 				return (
-					<article class="bg-dark-surface-2 rounded-md">
+					<article class="post-card">
 						<a class="no-underline cursor-pointer">
 							<hgroup class="p-3">
 								<h3 class="text-primary font-bold">{data.title}</h3>

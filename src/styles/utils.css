@@ -32,4 +32,13 @@
   .post p {
     @apply mb-4 text-white leading-7 text-lg;
   }
+
+  .post-card {
+    @apply bg-dark-surface-2 rounded-md drop-shadow-lg
+    border-tertiary border hover:opacity-75 transition-all duration-300;
+  }
+
+  .post-card h3 {
+    @apply hover:text-primary;
+  }
 }
