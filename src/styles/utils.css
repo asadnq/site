@@ -4,7 +4,7 @@
 
 @layer base {
   .link {
-    @apply text-secondary underline underline-offset-4;
+    @apply text-secondary underline underline-offset-4 hover:saturate-200;
   }
 
   h1 {
@@ -35,7 +35,7 @@
 
   .post-card {
     @apply bg-dark-surface-2 rounded-md drop-shadow-lg
-    border-tertiary border hover:opacity-75 transition-all duration-300;
+    border-tertiary border hover:brightness-125 transition-all duration-300;
   }
 
   .post-card h3 {
@@ -46,5 +46,4 @@
     font-family: 'Bebas Neue';
     @apply text-5xl font-bold text-primary;
   }
-
 }

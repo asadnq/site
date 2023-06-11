@@ -2,14 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import { Tabs } from '../components/Tabs';
 import Posts from '../components/Posts.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Asadnq">
   <header class="flex flex-row justify-between">
     <hgroup>
-      <h1 class="site-title">
-        ASADNQ
-      </h1>
+      <h1 class="site-title">ASADNQ</h1>
       <p class="text-lg font-semibold text-white">
         Software developer at
         <a class="link" href="https://www.cloudthought.co/">CloudThought</a>
@@ -20,7 +19,7 @@ import Posts from '../components/Posts.astro';
       <figcaption></figcaption>
     </figure>
   </header>
-  <main class="py-6">
+  <main class="py-6 flex-1">
     <!-- TODO: Fix -->
     <Tabs client:visible>
       <Posts slot="posts" />
@@ -30,4 +29,5 @@ import Posts from '../components/Posts.astro';
       <h1 slot="bookReviews">book reviews</h1>
     </Tabs>
   </main>
+  <Footer />
 </Layout>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import DateTime from '../../components/DateTime.astro';
+import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -25,7 +26,7 @@ const { Content } = await entry.render();
       <a href="/">ASADNQ</a>
     </h2>
   </header>
-  <main>
+  <main class="flex-1">
     <header>
       <h1 class="text-5xl text-teal-400 font-bold">{entry.data.title}</h1>
       <DateTime value={entry.data.date} size="base" />
@@ -35,4 +36,5 @@ const { Content } = await entry.render();
       <Content />
     </article>
   </main>
+  <Footer />
 </Layout>
