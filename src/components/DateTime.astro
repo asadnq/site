@@ -3,7 +3,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
 
 const { format } = dateFormatter;
 
-const { value } = Astro.props;
+const { value, size } = Astro.props;
 ---
 
-<small class="text-slate-300 text-small font-thin">{format(new Date(value))}</small>
+<small class={`text-slate-300 text-${size ?? 'small'} font-thin`}>{format(new Date(value))}</small>

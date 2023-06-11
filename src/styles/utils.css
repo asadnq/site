@@ -41,4 +41,10 @@
   .post-card h3 {
     @apply hover:text-primary;
   }
+
+  .site-title {
+    font-family: 'Bebas Neue';
+    @apply text-5xl font-bold text-primary;
+  }
+
 }

@@ -20,10 +20,15 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
+  <header class="mb-6">
+    <h2 class="site-title text-4xl text-white">
+      <a href="/">ASADNQ</a>
+    </h2>
+  </header>
   <main>
     <header>
       <h1 class="text-5xl text-teal-400 font-bold">{entry.data.title}</h1>
-      <DateTime value={entry.data.date} />
+      <DateTime value={entry.data.date} size="base" />
     </header>
     <div class="h-8"></div>
     <article class="post">

@@ -18,13 +18,13 @@ const blogPosts = await getCollection('blog');
 			blogPosts.map(({ data, slug }) => {
 				return (
 					<article class="post-card">
-						<a class="no-underline cursor-pointer">
-							<hgroup class="p-3">
-								<h3 class="text-primary font-bold">{data.title}</h3>
+						<a class="no-underline cursor-pointer" href={`/posts/${slug}`}>
+							<div class="p-3">
+								<h3 class="text-primary font-bold">{data.title}</h3>{' '}
 								<DateTime value={data.date} />
 								<div class="h-2" />
 								<p class="text-base">{data.subtitle}</p>
-							</hgroup>
+							</div>
 						</a>
 					</article>
 				);
