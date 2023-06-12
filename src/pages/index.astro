@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { Tabs } from '../components/Tabs';
 import Posts from '../components/Posts.astro';
 import Footer from '../components/Footer.astro';
+import BookReviews from '../components/BookReviews.astro';
+import About from '../components/About.astro';
 ---
 
 <Layout title="Asadnq">
@@ -23,9 +25,9 @@ import Footer from '../components/Footer.astro';
     <Tabs client:visible>
       <Posts slot="posts" />
 
-      <h1 slot="aboutMe">About me</h1>
+      <About slot="about" />
 
-      <h1 slot="bookReviews">book reviews</h1>
+      <BookReviews slot="bookReviews" />
     </Tabs>
   </main>
   <Footer />
