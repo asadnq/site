@@ -26,6 +26,11 @@
   hgroup {
     @apply leading-8;
   }
+
+  .animated-underline {
+    @apply after:content-[''] after:w-full after:block after:h-1 after:bg-white after:origin-left
+    hover:after:scale-x-75 after:ease-in-out after:duration-300;
+  }
 }
 
 @layer components {
