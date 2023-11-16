@@ -4,13 +4,7 @@ subtitle: Menjelaskan konkurensi dengan contoh aktifitas di dunia nyata
 date: '2023-10-15'
 ---
 
-**Table of contents**
-
-- Apa itu konkurensi. Perbandingannya dengan paralelisme
-- Konkurensi ketika memasak mie
-- Contoh konkuren program
-
-# Apa itu konkurensi
+## Apa itu konkurensi
 
 Ketika saya mempelejari konkurensi, salah satu kesulitan yang sulit dipahami adalah bagaimana
 konsep ini berbeda dengan paralelisme. Berikut kutipan dari Wikipedia terkait apa itu konkurensi dan paralelisme
@@ -38,7 +32,8 @@ Total waktu yang diperlukan adalah 5 menit 40 detik. Perhatikan langkah yang dig
 Konkurensi adalah kemampuan (apa) untuk berpindah dari satu tugas ke tugas lainnya. Dalam eksekusi yang konkuren, tugas tersebut segera ditinggalkan dan tugas selanjutnya segera dikerjakan. Perbandingan utama dalam kasus ini yaitu: **menunggu mie selesai direbus lalu mulai mengerjakan tugas lain** atau **mengerjakan tugas lain selagi mie direbus**.
 
 Berikut ilustrasi untuk menunjukan perbedannya:
-![comparison](./comparison.png)
+
+![comparison](/blogs/konkurensi-dan-memasak-mie/comparison.png)
 
 Titik-titik yang putus menunjukan proses berlangsung tanpa memerlukan keterlibatan dari kita.
 
@@ -46,7 +41,7 @@ Kemampuan mengerjakan beberapa task dalam satu jangka waktu dan berpindah dari s
 
 <!-- Goal: Memeberi kesadaran bahwa konkurensi terjadi di banyak program tanpa kita sadari -->
 
-# Perbandingan dengan konkurensi di sebuah program
+## Perbandingan dengan konkurensi di sebuah program
 
 Sebenarnya konkurensi terdapat di banyak program. Hal yang sering kita temui adalah interaksi antara client dan server. Berikut contoh program sederhana yang menunjukan konkurensi. Tiap function disini mewakili langkah memasak mie di atas.
 
@@ -60,7 +55,7 @@ function bukaBungkusMie() {
 function rebusMie() {
   const apiUrl = 'https://hub.dummyapis.com/delay?seconds=1';
 
-	console.log('mie mulai direbus 🕐');
+  console.log('mie mulai direbus 🕐');
   fetch(apiUrl).then(() => console.log('mie selesai direbus ✅'));
 }
 
@@ -85,7 +80,9 @@ function masakMie() {
   campurMieDenganBumbu();
 }
 ```
+
 Berikut penjelasan kode tersebut
+
 1. Function ini mensimulasikan komputasi yang memakan waktu lama yang terjadi di server
 2. Eksekusi langkah secara runtut
 
@@ -102,21 +99,22 @@ mie selesai direbus ✅
 
 Cara memperbaiki urutan ini akan dibahas di sesi selanjutnya.
 
-# Tantangan konkurensi: kontrol
+## Tantangan konkurensi: kontrol
 
 Konkurensi menimbulkan masalah dimana urutan program tidak dieksekusi sesuai urutan yang diinginkan. Dalam contoh program diatas, `campurMieDenganBumbu` muncul sebelum `rebusMie` selesai karena kita tidak memberikan instruksi **untuk `campurMieDenganBumbu` untuk dieksekusi setelah `rebusMie` selesai**. Untuk memperbaiki urutannya kita bisa mengubah kode menjadi:
+
 ```javascript
 function masakMie() {
   bukaBungkusMie();
-	// 1
+  // 1
   rebusMie().then(() => campurMieDenganBumbu());
   siapkanPiring();
   bukaDanTuangkanBumbuKePiring();
 }
 ```
+
 1. Sintaks `then` menyuruh javascript mengeksekusi `campurMie` setelah `rebusMie` selesai
 
-# Kesimpulan
+## Kesimpulan
 
-<!-- Konkurensi membuat program lebih efisien karena program tidak mesti menunggu komputasi yang terjadi  -->
 Konkurensi menjadikan program lebih efisien karena program mampu mengerjakan tugas selagi menunggu tugas yang dikerjakan oleh pihak lain (mis. server). Namun juga memunculkan tantangan dalam memastikan program tereksusi sesuai urutan
