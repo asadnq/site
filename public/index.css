@@ -1,0 +1,58 @@
+:root {
+  --font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --font-body: 'Poppins';
+  --font-title: 'Bebas Neue';
+}
+
+/* Firefox */
+* {
+  scrollbar-color: #7ec7cc;
+}
+
+/* Webkit */
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-track {
+  background: #00223d89; /*oxford-blue with less opacity*/
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7ec7cc3b; /** tiffany-blue with less opacity */
+  border: 4px solid transparent;
+  background-clip: content-box;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+	Add the correct amount of scroll padding to ensure that linked headings are always visible
+	and have enough distance to the viewport edge and potential fixed navigation bars.
+
+	Please note that this can't be done with `scroll-margin` on the scroll targets themselves
+	due to lack of iOS Safari browser support.
+*/
+html {
+  /* Mobile TOC is displayed above page content */
+  /* scroll-padding-top: calc(
+    1.5rem + var(--theme-navbar-height) + var(--theme-mobile-toc-height)
+  ); */
+}
+
+@media (min-width: 72em) {
+  html {
+    /* Regular TOC is displayed as a sidebar */
+    /* scroll-padding-top: calc(1.5rem + var(--theme-navbar-height)); */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details svg {
+    /* Removes the collapsible sidebar svg animation */
+    transition: none !important;
+  }
+}

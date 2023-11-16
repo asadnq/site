@@ -43,7 +43,7 @@ export const Tabs: React.FC<{
               <li key={section.slug} className={tabStyle}>
                 <button onClick={() => setActiveTab(index)}>
                   <h3
-                    className={` ${
+                    className={`${
                       isActive ? 'brightness-100' : 'brightness-75'
                     }`}>
                     {slugToTitle(section.slug)}
@@ -58,9 +58,7 @@ export const Tabs: React.FC<{
       <section className="px-2 pt-6">
         <hgroup>
           <h2 className="text-secondary">{slugToTitle(activeSection.slug)}</h2>
-          {activeSection.description.length > 0 && (
-            <p>{activeSection.description}</p>
-          )}
+          {activeSection.description.length > 0 && activeSection.description}
         </hgroup>
         <div className="h-2" />
         {(() => {

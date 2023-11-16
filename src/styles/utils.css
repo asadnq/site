@@ -35,7 +35,7 @@
 
 @layer components {
   .post p {
-    @apply mb-4 text-white leading-7 text-lg font-serif;
+    @apply mb-4 text-text-body leading-7 text-lg font-serif;
   }
 
   .post-card {
@@ -50,5 +50,41 @@
   .site-title {
     font-family: 'Bebas Neue';
     @apply text-5xl font-bold text-primary;
+  }
+
+  /** START: MD **/
+  .post :is(h1, h2, h3, h4, h5, h6) {
+    @apply mt-12 mb-4;
+  }
+
+  .post p {
+    @apply text-[18px] font-serif text-white mb-8;
+  }
+
+  .post blockquote {
+    background-color: rgba(0, 0, 0, 0.391);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    @apply p-4 my-8 rounded-md border-secondary border mb-8;
+  }
+
+  .post blockquote > p {
+    @apply text-primary text-lg m-0;
+  }
+
+  .post ol {
+    list-style: decimal;
+    @apply mb-8 pl-8;
+  }
+
+  .post pre {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    text-wrap: wrap;
+    @apply rounded-md p-4 mb-8;
+  }
+
+  .post p > code {
+    @apply bg-secondary-surface-dark text-secondary p-1 rounded-md;
   }
 }

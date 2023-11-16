@@ -18,15 +18,22 @@ import '../styles/utils.css';
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overlock:ital@0;1&family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Over+the+Rainbow&family=Poppins&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
   </head>
   <body class="text-white bg-dark-surface">
-    <div class="mx-auto max-w-xl pt-6 px-4 min-h-screen flex flex-col">
-      <slot />
+    <div class="mx-auto max-w-3xl pt-6 px-4 min-h-screen flex flex-col">
+      <div>
+        <section>
+          <slot />
+        </section>
+      </div>
     </div>
   </body>
 </html>
