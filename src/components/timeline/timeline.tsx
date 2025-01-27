@@ -4,7 +4,10 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { motion, type HTMLMotionProps } from 'framer-motion';
-import { AlertCircle, Loader2 } from 'lucide-react';
+import {
+  IconAlertCircle as AlertCircle,
+  IconLoader2 as Loader2,
+} from '@tabler/icons-react';
 import type { TimelineColor } from './types';
 
 const timelineVariants = cva('flex flex-col relative', {

@@ -3,6 +3,7 @@ import {
   IconBrandLinkedinFilled,
   IconMailFilled,
 } from '@tabler/icons-react';
+import { Button } from './ui/button';
 
 export const ContactList = () => {
   const iconClassName =
@@ -18,6 +19,7 @@ export const ContactList = () => {
       <a href="https://www.linkedin.com/in/asadnq/" className={iconClassName}>
         <IconBrandLinkedinFilled />
       </a>
+      <Button>hello</Button>
     </div>
   );
 };

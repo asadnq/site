@@ -7,18 +7,30 @@ import {
 
 export const CardMenuList = () => {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-4">
+    <div className="grid grid-cols-2 grid-rows-2 gap-8">
       <CardMenu
-        title="Software"
-        description="Check out my works"
+        title="Software projects"
+        description="My professional and personal projects"
         icon={<IconArrowRight className="text-accent" />}
-        href="/showcase"
+        href="/projects"
       />
       <CardMenu
         title="Book reviews"
         description="Check out my book reviews"
         icon={<IconArrowRight className="text-accent" />}
         href="/book-reviews"
+      />
+      <CardMenu
+        title="Résumé"
+        description="You can find my professional work experience here"
+        icon={<IconArrowRight className="text-accent" />}
+        href="/resume"
+      />
+      <CardMenu
+        title="About me"
+        description="Learn more about me and my interests"
+        icon={<IconArrowRight className="text-accent" />}
+        href="/about"
       />
     </div>
   );
