@@ -49,7 +49,7 @@ const CardMenu = ({ title, description, icon, href }: CardMenuProps) => {
       <div className="bg-card rounded-md px-4 py-2 cursor-pointer hover:drop-shadow-lg hover:-translate-y-2 transition-shadow transition-transform duration-300">
         <h4 className="text-xl font-bold text-primary">{title}</h4>
         <div className="flex justify-between items-center">
-          <p className="text-sm text-background">{description}</p>
+          <p className="text-sm text-card-foreground">{description}</p>
           {icon}
         </div>
       </div>

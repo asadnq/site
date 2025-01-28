@@ -3,25 +3,25 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --background: 210 30% 25%; /* Denim Blue */
-    --foreground: 0 100% 100%;
-    --card: 0 0% 100%;
-    --card-foreground: 40 89% 52%; /* Vintage Gold */
-    --popover: 0 0% 100%;
-    --popover-foreground: 40 89% 52%; /* Vintage Gold */
-    --primary: 210 50% 35%; /* Denim Base */
-    --primary-foreground: 30 8% 95%; /* Light Off-White */
-    --secondary: 45 92% 39%; /* Golden Yellow */
-    --secondary-foreground: 30 9% 56%; /* Warm Brown */
-    --muted: 200 20% 56%; /* Faded Denim */
-    --muted-foreground: 210 10% 45%; /* Dusty Off-White */
-    --accent: 135 40% 60%; /* Vintage Green Accent */
-    --accent-foreground: 0 100% 100%; /* Pure White */
-    --destructive: 0 84.2% 60.2%; /* Red for destructive */
-    --destructive-foreground: 210 40% 98%;
-    --border: 210 30% 40%; /* Subtle Denim Border */
-    --input: 210 30% 40%; /* Subtle Denim Input */
-    --ring: 40 89% 52%; /* Vintage Gold Ring */
+    --background: 207 95% 8%;
+    --foreground: 217 34% 88%;
+    --card: 204 79% 24%;
+    --card-foreground: 0 0% 100%;
+    --popover: 204 79% 24%;
+    --popover-foreground: 217 34% 88%;
+    --primary: 169 72% 45%;
+    --primary-foreground: 30 8% 20%;
+    --secondary: 77 67% 68%;
+    --secondary-foreground: 30 9% 56%;
+    --muted: 210 20% 28%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 276 68% 75%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 1 83% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 30% 28%;
+    --input: 210 30% 40%;
+    --ring: 169 72% 45%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -29,6 +29,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
