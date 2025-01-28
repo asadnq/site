@@ -37,7 +37,7 @@ const ExperienceItem = ({
   }) => {
     return (
       <div className="flex flex-col gap-y-2">
-        <h3 className="text-base font-medium text-secondary">{title}</h3>
+        <h4 className="text-base font-medium text-secondary">{title}</h4>
         {children}
       </div>
     );
@@ -57,8 +57,8 @@ const ExperienceItem = ({
       <div className="flex-[7] items-end relative gap-y-2  before:content-[''] before:bg-accent before:w-4 before:h-4 before:rounded-full before:absolute before:top-0 before:-left-2">
         <div className="flex flex-col border-s border-border gap-y-4 my-8 ps-8 h-[80%]">
           <div className="flex flex-col gap-y-1">
-            <div className="text-xl font-semibold text-primary">{title}</div>
-            <div className="text-sm text-foreground">{summary}</div>
+            <h3 className="text-xl font-semibold gradient-text">{title}</h3>
+            <p className="text-sm text-foreground">{summary}</p>
           </div>
           <Section title="Responsibilities">
             <ul className="md:w-2/4 list-disc list-inside">
@@ -75,7 +75,7 @@ const ExperienceItem = ({
           <Section title="Tech Stack">
             <div className="md:w-2/4 flex flex-wrap gap-x-2 gap-y-2">
               {techStack?.map((tech) => (
-                <Badge>{tech}</Badge>
+                <Badge key={tech}>{tech}</Badge>
               ))}
             </div>
           </Section>
