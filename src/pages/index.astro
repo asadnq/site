@@ -1,7 +1,8 @@
 ---
+import { TechStackList } from '@/components/personal-info/tech-stack-list';
 import BaseHead from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { ContactList } from '@/components/contact-list';
+import { ContactList } from '@/components/contact-list.tsx';
 // import { CardMenuList } from '@/components/card-menu-list';
 import { Navbar } from '@/components/navbar.tsx';
 ---
@@ -40,6 +41,7 @@ import { Navbar } from '@/components/navbar.tsx';
           <div>
             <CardMenuList />
           </div> -->
+          <TechStackList client:only="react" />
         </div>
       </div>
     </main>
