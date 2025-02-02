@@ -3,7 +3,7 @@ import { allTechStackItems } from './data';
 
 export const TechStackList = () => {
   return (
-    <div className="flex flex-wrap max-w-7xl gap-8 dark">
+    <div className="flex flex-wrap max-w-7xl gap-8 dark items-center justify-center">
       {allTechStackItems.map((techStack) => (
         <a href={techStack.url} target="_blank">
           <div className="flex flex-col items-center">
