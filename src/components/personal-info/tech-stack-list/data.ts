@@ -13,6 +13,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'reactjs',
     categories: [TechStackCategory.frontend],
+    id: 'react',
   },
   {
     name: 'Next.js',
@@ -22,6 +23,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'nextjs2',
     categories: [TechStackCategory.frontend],
+    id: 'next-js',
   },
   {
     name: 'Astro',
@@ -30,6 +32,7 @@ const frontendStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.hobby,
     categories: [TechStackCategory.frontend],
+    id: 'astro',
   },
   {
     name: 'Flutter',
@@ -39,6 +42,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'flutter',
     categories: [TechStackCategory.frontend],
+    id: 'flutter',
   },
   {
     name: 'React Native',
@@ -48,6 +52,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.hobby,
     logoId: 'reactjs',
     categories: [TechStackCategory.frontend],
+    id: 'react-native',
   },
   {
     name: 'Redux',
@@ -57,6 +62,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'redux',
     categories: [TechStackCategory.frontend],
+    id: 'redux',
   },
   {
     name: 'Redux Saga',
@@ -66,6 +72,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'reduxsaga',
     categories: [TechStackCategory.frontend],
+    id: 'redux-saga',
   },
   {
     name: 'Tailwind CSS',
@@ -75,6 +82,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'tailwindcss',
     categories: [TechStackCategory.frontend],
+    id: 'tailwind-css',
   },
   {
     name: 'Zustand',
@@ -83,6 +91,7 @@ const frontendStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.frontend],
+    id: 'zustand',
   },
   {
     name: 'React Query',
@@ -92,6 +101,7 @@ const frontendStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'reactquery',
     categories: [TechStackCategory.frontend],
+    id: 'react-query',
   },
   {
     name: 'ReactiveX',
@@ -100,8 +110,9 @@ const frontendStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.frontend],
+    id: 'reactive-x',
   },
-];
+] as const;
 
 const backendTechStackItems: TechStackItem[] = [
   {
@@ -111,6 +122,7 @@ const backendTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.backend],
+    id: 'apollo-graphql',
   },
   {
     name: 'NestJS',
@@ -120,6 +132,7 @@ const backendTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'nestjs',
     categories: [TechStackCategory.backend],
+    id: 'nest-js',
   },
   {
     name: 'PostgreSQL',
@@ -129,6 +142,7 @@ const backendTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'postgresql',
     categories: [TechStackCategory.backend],
+    id: 'postgres',
   },
   {
     name: 'MongoDB',
@@ -138,6 +152,7 @@ const backendTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'mongodb',
     categories: [TechStackCategory.backend],
+    id: 'mongo-db',
   },
   {
     name: 'Express',
@@ -146,6 +161,7 @@ const backendTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.backend],
+    id: 'express-js',
   },
   {
     name: 'Redis',
@@ -155,8 +171,9 @@ const backendTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'redis',
     categories: [TechStackCategory.backend],
+    id: 'redis',
   },
-];
+] as const;
 
 const langOrRuntimeStackItems: TechStackItem[] = [
   {
@@ -167,6 +184,7 @@ const langOrRuntimeStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'typescript',
     categories: [TechStackCategory.language],
+    id: 'ts',
   },
   {
     name: 'Node.js',
@@ -176,6 +194,7 @@ const langOrRuntimeStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'nodejs',
     categories: [TechStackCategory.language],
+    id: 'node-js',
   },
   {
     name: 'JavaScript',
@@ -185,6 +204,7 @@ const langOrRuntimeStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'js',
     categories: [TechStackCategory.language],
+    id: 'js',
   },
   {
     name: 'Dart',
@@ -194,8 +214,9 @@ const langOrRuntimeStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'dart',
     categories: [TechStackCategory.language],
+    id: 'dart',
   },
-];
+] as const;
 
 const specTechStackItems: TechStackItem[] = [
   {
@@ -206,8 +227,9 @@ const specTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'graphql',
     categories: [TechStackCategory.spec],
+    id: 'graphql',
   },
-];
+] as const;
 
 const devopsTechStackItems: TechStackItem[] = [
   {
@@ -218,6 +240,7 @@ const devopsTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'docker',
     categories: [TechStackCategory.devops],
+    id: 'docker',
   },
   {
     name: 'Terraform',
@@ -226,6 +249,7 @@ const devopsTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.hobby,
     categories: [TechStackCategory.devops],
+    id: 'terraform',
   },
   {
     name: 'Ansible',
@@ -234,8 +258,9 @@ const devopsTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.hobby,
     categories: [TechStackCategory.devops],
+    id: 'ansible',
   },
-];
+] as const;
 
 const miscTechStackItems: TechStackItem[] = [
   {
@@ -246,6 +271,7 @@ const miscTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'git',
     categories: [TechStackCategory.misc],
+    id: 'git',
   },
   {
     name: 'GitHub',
@@ -254,6 +280,7 @@ const miscTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.misc],
+    id: 'github',
   },
   {
     name: 'GitLab',
@@ -263,6 +290,7 @@ const miscTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'gitlab',
     categories: [TechStackCategory.misc],
+    id: 'gitlab',
   },
   {
     name: 'Nx',
@@ -271,6 +299,7 @@ const miscTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.misc],
+    id: 'nx-monorepo',
   },
   {
     name: 'Turbo repo',
@@ -279,6 +308,7 @@ const miscTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.misc],
+    id: 'turborepo',
   },
   {
     name: 'Firebase',
@@ -288,6 +318,7 @@ const miscTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'firebase',
     categories: [TechStackCategory.misc, TechStackCategory.backend],
+    id: 'firebase',
   },
   {
     name: 'Jest',
@@ -297,6 +328,7 @@ const miscTechStackItems: TechStackItem[] = [
     proficiency: TechStackProficiency.professional,
     logoId: 'jest',
     categories: [TechStackCategory.misc],
+    id: 'jest',
   },
   {
     name: 'Prisma',
@@ -305,8 +337,9 @@ const miscTechStackItems: TechStackItem[] = [
     projectIds: ['ffeline-blog'],
     proficiency: TechStackProficiency.professional,
     categories: [TechStackCategory.misc],
+    id: 'prisma',
   },
-];
+] as const;
 
 export const allTechStackItems = [
   ...frontendStackItems,
@@ -315,4 +348,6 @@ export const allTechStackItems = [
   ...specTechStackItems,
   ...langOrRuntimeStackItems,
   ...miscTechStackItems,
-];
+] as const;
+
+export type TechStackId = (typeof allTechStackItems)[number]['id'];

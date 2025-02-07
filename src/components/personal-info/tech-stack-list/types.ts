@@ -14,6 +14,7 @@ export enum TechStackCategory {
 }
 
 export interface TechStackItem {
+  id: string;
   name: string;
   logoId?: string;
   logo: string;

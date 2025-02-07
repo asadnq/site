@@ -1,6 +1,8 @@
 ---
+import { Navbar } from '@/components/navbar';
 import BaseHead from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Footer from '@/components/Footer.astro';
 ---
 
 <!doctype html>
@@ -9,6 +11,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <slot />
+    <div class="min-h-screen">
+      <Navbar client:only="react" />
+      <main class="md:max-w-4xl mx-auto flex flex-col min-h-[80vh]">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

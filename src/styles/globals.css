@@ -103,14 +103,25 @@ body {
       hsla(var(--primary) / 10%) 1px,
       transparent 1px
     ),
-    linear-gradient(
-      to bottom,
-      hsla(var(--primary) / 10%) 1px,
-      transparent 1px
-    );
+    linear-gradient(to bottom, hsla(var(--primary) / 10%) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 0 0;
 
   /* Set a background color */
   background-color: hsl(var(--background));
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient-shift 1s ease-in infinite;
 }
