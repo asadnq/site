@@ -1,27 +1,11 @@
 ---
 import { ContactList } from '@/components/contact-list.tsx';
+import { Banner } from '@/components/banner.tsx';
 import Base from '@/layouts/Base.astro';
 ---
 
 <Base>
-  <section
-    class="min-h-full flex-1 flex flex-col gap-y-4 md:gap-y-8 justify-center items-center px-12 py-8"
-  >
     <!-- Heading and brief bio-->
-    <div class="flex flex-col gap-y-4">
-      <span
-        class="relative left-[-40px] text-2xl font-bold text-foreground font-display-2 leading-loose"
-        >👋 Hi there,</span
-      >
-      <h1 class="text-7xl sm:text-9xl font-extrabold font-display">I'm Asad</h1>
-      <p class="relative left-[40px] text-xl font-regular">
-        A <span class="font-bold text-secondary">software developer</span>
-        with a passion for literature, languages, and community.
-      </p>
-    </div>
+    <Banner client:only="react" />
     <!-- Contact list -->
-    <div>
-      <ContactList />
-    </div>
-  </section>
 </Base>

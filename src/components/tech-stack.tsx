@@ -10,7 +10,6 @@ export const TechStack = ({
   size: number;
 }) => {
   const techStack = allTechStackItems.find((el) => el.id === techStackId);
-  console.log('techStack', techStack);
 
   if (!techStack) {
     return <span>TechStack not found</span>;
