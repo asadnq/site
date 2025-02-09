@@ -1,21 +1,21 @@
+import type { Project } from '@/types';
 import type { TechStackId } from './personal-info/tech-stack-list';
 import { TechStack } from './tech-stack';
 
-export interface ProjectCardProps {
-  title: string;
-  description: string;
-  repoLink: string;
-  id: string;
-  techStackIds: TechStackId[];
+interface ProjectCardProps {
+  project: Project & { id: string };
 }
 
 export function ProjectCard({
-  title,
-  description,
-  repoLink: link,
-  id,
-  techStackIds,
+  project: { title, description, repoLink: link, id, techStackIds },
 }: ProjectCardProps) {
+  const techStackComponent = techStackIds && (
+    <div className="flex flex-row items-center gap-x-4 justify-end">
+      {techStackIds.map((techStackId) => (
+        <TechStack techStackId={techStackId} size={24} />
+      ))}
+    </div>
+  );
   return (
     <a
       href={`/projects/${id}/`}
@@ -26,11 +26,7 @@ export function ProjectCard({
           <h2 className="text-2xl font-bold text-foreground">{title}</h2>
           <p className="text-muted-foreground text-sm">{description}</p>
         </div>
-        <div className="flex flex-row items-center gap-x-4 justify-end">
-          {techStackIds.map((techStackId) => (
-            <TechStack techStackId={techStackId} size={24} />
-          ))}
-        </div>
+        {techStackComponent}
       </div>
       {/* </a> */}
     </a>

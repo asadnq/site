@@ -1,19 +1,11 @@
 ---
 import Base from '@/layouts/Base.astro';
-import {
-  ProjectCard,
-  type ProjectCardProps,
-} from '@/components/project-card.tsx';
+import { ProjectCard } from '@/components/project-card.tsx';
+import { getCollection } from 'astro:content';
 
-const projects: ProjectCardProps[] = [
-  {
-    title: 'Turborepo Boilerplate',
-    description: 'A boilerplate for Turborepo',
-    repoLink: 'https://github.com/asadnq/turborepo-boilerplate',
-    id: 'turborepo-boilerplate',
-    techStackIds: ['turborepo', 'next-js', 'ts'],
-  },
-];
+const projects = (await getCollection('project')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <Base>
@@ -27,9 +19,12 @@ const projects: ProjectCardProps[] = [
     <div class="h-8"></div>
     <div class="grid grid-cols-2 sm:grid-cols-3 w-full gap-8">
       {
-        Array(10)
-          .fill(projects[0])
-          .map((el, i) => <ProjectCard client:only="react" {...el} />)
+        projects.map((project) => (
+          <ProjectCard
+            client:only="react"
+            project={{ ...project.data, id: project.id }}
+          />
+        ))
       }
     </div>
   </section>
