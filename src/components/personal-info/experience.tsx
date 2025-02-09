@@ -57,7 +57,7 @@ const ExperienceItem = ({
       <div className="flex-[7] items-end relative gap-y-2  before:content-[''] before:bg-accent before:w-4 before:h-4 before:rounded-full before:absolute before:top-0 before:-left-2">
         <div className="flex flex-col border-s border-border gap-y-4 my-8 ps-8 h-[80%]">
           <div className="flex flex-col gap-y-1">
-            <h3 className="text-xl font-semibold gradient-text">{title}</h3>
+            <h3 className="text-xl font-semibold text-gradient">{title}</h3>
             <p className="text-sm text-foreground">{summary}</p>
           </div>
           <Section title="Responsibilities">

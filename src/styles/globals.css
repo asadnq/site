@@ -64,8 +64,8 @@
   body {
     @apply bg-background text-foreground;
   }
-  .gradient-text {
-    @apply bg-gradient-to-b from-primary via-primary/80 to-accent/50 bg-clip-text text-transparent;
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-card to-card bg-clip-text text-transparent;
   }
 }
 @layer base {
