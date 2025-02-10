@@ -7,9 +7,12 @@ import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
+
   integrations: [
     mdx(),
     sitemap(),
@@ -18,4 +21,6 @@ export default defineConfig({
     }),
     react(),
   ],
+
+  adapter: netlify(),
 });
