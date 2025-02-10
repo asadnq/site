@@ -67,6 +67,9 @@
   .text-gradient {
     @apply bg-gradient-to-r from-primary via-card to-card bg-clip-text text-transparent;
   }
+  .bg-hazard {
+    @apply bg-[repeating-linear-gradient(-45deg,#ffcc00_0px,#ffcc00_20px,#000_20px,#000_40px)];
+  }
 }
 @layer base {
   @layer base {

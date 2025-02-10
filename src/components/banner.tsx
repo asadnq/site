@@ -18,8 +18,9 @@ export const Banner = () => {
           transition={{ delay: 0.5, duration: 0.3 }}
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className="text-7xl sm:text-9xl font-extrabold font-display">
-          I'm Asad
+          className="text-7xl sm:text-9xl ">
+          <span className="font-thin">I'm</span>{' '}
+          <span className="font-display">Asad</span>
         </motion.h1>
         <motion.p
           transition={{ delay: 1.2, duration: 0.3 }}

@@ -4,32 +4,41 @@ import { motion } from 'motion/react';
 //   IconBrandLinkedinFilled,
 //   IconMailFilled,
 // } from '@tabler/icons-react';
+import {
+  LinkedInLogoIcon,
+  GitHubLogoIcon,
+  EnvelopeClosedIcon,
+} from '@radix-ui/react-icons';
 import { Button } from './ui/button';
 import { useState } from 'react';
+
+const iconSize = 32;
 
 const initialContacts = [
   {
     href: 'mailto:n.asadalhaq@gmail.com',
-    // icon: <IconMailFilled />,
+    icon: <EnvelopeClosedIcon width={iconSize} height={iconSize} />,
   },
   {
     href: 'https://github.com/asadnq',
     // icon: <IconBrandGithubFilled />,
+    icon: <GitHubLogoIcon width={iconSize} height={iconSize} />,
   },
   {
     href: 'https://www.linkedin.com/in/asadnq/',
     // icon: <IconBrandLinkedinFilled />,
+    icon: <LinkedInLogoIcon width={iconSize} height={iconSize} />,
   },
 ];
 
 export const ContactList = () => {
   const iconClassName =
-    'text-xl font-bold text-accent hover:text-accent/50 font-display duration-200 transition';
+    'w-8 h-8 text-2xl font-bold hover:text-foreground/50 font-display duration-200 transition';
 
   const [contacts, setContacts] = useState(initialContacts);
 
   return (
-    <div className="flex flex-row gap-4 items-center w-full">
+    <div className="flex flex-row gap-8 items-center w-full">
       {contacts.map((el, i) => {
         return (
           <motion.div
@@ -43,12 +52,12 @@ export const ContactList = () => {
               opacity: 1,
             }}
             transition={{
-              duration: 0.3 * (i + 1),
+              duration: 0.3,
+              delay: 0.2 * i,
               ease: 'easeOut',
             }}>
-            {/* {el.icon} */}
-            <a className={iconClassName} href={el.href}>
-              aaa
+            <a href={el.href} className={iconClassName}>
+              {el.icon}
             </a>
           </motion.div>
         );

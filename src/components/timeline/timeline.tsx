@@ -4,10 +4,7 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { motion, type HTMLMotionProps } from 'framer-motion';
-import {
-  IconAlertCircle as AlertCircle,
-  IconLoader2 as Loader2,
-} from '@tabler/icons-react';
+import { ExclamationTriangleIcon, ReloadIcon } from '@radix-ui/react-icons';
 import type { TimelineColor } from './types';
 
 const timelineVariants = cva('flex flex-col relative', {
@@ -153,7 +150,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
 
             <div className="mx-3 flex flex-col items-center justify-start gap-y-2">
               <div className="relative flex h-8 w-8 animate-pulse items-center justify-center rounded-full bg-muted ring-8 ring-background">
-                <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+                <ReloadIcon className="h-4 w-4 animate-spin text-muted-foreground" />
               </div>
               {showConnector && (
                 <div className="h-full w-0.5 animate-pulse bg-muted" />
@@ -191,7 +188,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
 
             <div className="mx-3 flex flex-col items-center justify-start gap-y-2">
               <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-destructive/20 ring-8 ring-background">
-                <AlertCircle className="h-4 w-4 text-destructive" />
+                <ExclamationTriangleIcon className="h-4 w-4 text-destructive" />
               </div>
               {showConnector && (
                 <TimelineConnector status="pending" className="h-full" />
