@@ -1,48 +1,59 @@
 import { motion } from 'motion/react';
-import {
-  IconBrandGithubFilled,
-  IconBrandLinkedinFilled,
-  IconMailFilled,
-} from '@tabler/icons-react';
+// import {
+//   IconBrandGithubFilled,
+//   IconBrandLinkedinFilled,
+//   IconMailFilled,
+// } from '@tabler/icons-react';
 import { Button } from './ui/button';
+import { useState } from 'react';
 
-const contacts = [
+const initialContacts = [
   {
     href: 'mailto:n.asadalhaq@gmail.com',
-    icon: <IconMailFilled />,
+    // icon: <IconMailFilled />,
   },
   {
     href: 'https://github.com/asadnq',
-    icon: <IconBrandGithubFilled />,
+    // icon: <IconBrandGithubFilled />,
   },
   {
     href: 'https://www.linkedin.com/in/asadnq/',
-    icon: <IconBrandLinkedinFilled />,
+    // icon: <IconBrandLinkedinFilled />,
   },
 ];
 
 export const ContactList = () => {
   const iconClassName =
-    'text-xl font-bold text-accent hover:text-accent/50 font-display duration-200 transition-all';
+    'text-xl font-bold text-accent hover:text-accent/50 font-display duration-200 transition';
+
+  const [contacts, setContacts] = useState(initialContacts);
+
   return (
     <div className="flex flex-row gap-4 items-center w-full">
       {contacts.map((el, i) => {
         return (
-          <motion.a
-            initial={{ y: 24, opacity: 0.3 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.2 * i + 1,
-              ease: 'linear',
-              type: 'tween',
+          <motion.div
+            key={i}
+            initial={{
+              y: 48,
+              opacity: 0,
             }}
-            href={el.href}
-            className={iconClassName}>
-            {el.icon}
-          </motion.a>
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.3 * (i + 1),
+              ease: 'easeOut',
+            }}>
+            {/* {el.icon} */}
+            <a className={iconClassName} href={el.href}>
+              aaa
+            </a>
+          </motion.div>
         );
       })}
-      <Button>hello</Button>
+      {/* <Button onClick={() => setContacts(contacts.reverse())}>hello</Button> */}
     </div>
   );
 };
