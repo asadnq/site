@@ -111,7 +111,8 @@ body {
   background-position: 0 0, 0 0;
 
   /* Set a background color */
-  background-color: hsl(var(--background));
+  /* background-color: hsl(var(--background)); */
+  @apply bg-slate-950;
 }
 
 @keyframes gradient-shift {
