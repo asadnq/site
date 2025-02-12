@@ -44,16 +44,16 @@ export const ContactList = () => {
           <motion.div
             key={i}
             initial={{
-              y: 48,
+              scale: 1.5,
               opacity: 0,
             }}
             animate={{
-              y: 0,
+              scale: 1,
               opacity: 1,
             }}
             transition={{
               duration: 0.3,
-              delay: 0.2 * i,
+              delay: 0.1 * i,
               ease: 'easeOut',
             }}>
             <a href={el.href} className={iconClassName}>

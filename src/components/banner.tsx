@@ -2,6 +2,9 @@ import { motion } from 'motion/react';
 import { ContactList } from './contact-list';
 import { useState } from 'react';
 
+let animationStep = 0;
+const delay = 0.3;
+
 export const Banner = () => {
   const [displayContacts, setDisplayContacts] = useState(false);
   return (
@@ -10,12 +13,12 @@ export const Banner = () => {
         <motion.span
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ delay: animationStep++ * delay, duration: 0.3 }}
           className="relative left-[-40px] text-2xl font-bold text-foreground font-display-2 leading-loose">
           👋 Hi there,
         </motion.span>
         <motion.h1
-          transition={{ delay: 0.5, duration: 0.3 }}
+          transition={{ delay: animationStep++ * delay, duration: 0.3 }}
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           className="text-7xl sm:text-9xl ">
@@ -23,9 +26,9 @@ export const Banner = () => {
           <span className="font-display">Asad</span>
         </motion.h1>
         <motion.p
-          transition={{ delay: 1.2, duration: 0.3 }}
-          initial={{ scaleY: 0, opacity: 0 }}
-          animate={{ scaleY: 1, opacity: 1, type: 'spring' }}
+          transition={{ delay: animationStep++ * delay, duration: 0.3 }}
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1, type: 'spring' }}
           className="relative left-[40px] text-xl font-regular"
           onAnimationComplete={() =>
             setTimeout(() => setDisplayContacts(true), 300)
