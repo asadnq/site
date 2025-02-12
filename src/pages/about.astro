@@ -2,44 +2,21 @@
 import GoodreadsWidget from '@/components/GoodreadsWidget.astro';
 import StravaWidget from '@/components/StravaWidget.astro';
 import Base from '@/layouts/Base.astro';
+import { AboutSection } from '../components/sections/about.tsx';
 ---
 
 <Base>
   <section class="py-8 px-4 sm:px-0">
     <div class="flex flex-col gap-y-4">
       <h1 class="text-gradient text-7xl font-bold">About me</h1>
-      <div class="grid grid-col-1 sm:grid-cols-3 gap-4">
-        <p
-          class="text-foreground text-lg leading-relaxed col-span-2 row-start-2 sm:row-start-1"
-        >
-          An quod ita callida est, ut optime possit architectari voluptates?
-          Cuius quidem, quoniam Stoicus fuit, sententia condemnata mihi videtur
-          esse inanitas ista verborum. Duo Reges: constructio interrete. Habent
-          enim et bene longam et satis litigiosam disputationem. Estne, quaeso,
-          inquam, sitienti in bibendo voluptas? Utilitatis causa amicitia est
-          quaesita. Terram, mihi crede, ea lanx et maria deprimet. Quae est
-          igitur causa istarum angustiarum? Videamus animi partes, quarum est
-          conspectus illustrior; Consequentia exquirere, quoad sit id, quod
-          volumus, effectum. Frater et T. Videamus igitur sententias eorum, tum
-          ad verba redeamus. Sic, et quidem diligentius saepiusque ista loquemur
-          inter nos agemusque communiter. Neque solum ea communia, verum etiam
-          paria esse dixerunt.
-        </p>
-        <img
-          src="/whats-this.png"
-          class="rounded-full row-start-1 w-64 sm:w-80"
-          width="auto"
-        />
+      <AboutSection client:only="react" />
+    </div>
+    <section class="py-8 px-4 sm:px-0">
+      <h2 class="text-4xl font-bold text-accent mb-4">Widgets</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 w-full gap-8">
+        <GoodreadsWidget />
+        <StravaWidget />
       </div>
-    </div>
-    <div class="h-8"></div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 w-full gap-8"></div>
-  </section>
-  <section class="py-8 px-4 sm:px-0">
-    <h2 class="text-4xl font-bold text-accent mb-4">Widgets</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 w-full gap-8">
-      <GoodreadsWidget />
-      <StravaWidget />
-    </div>
+    </section>
   </section>
 </Base>

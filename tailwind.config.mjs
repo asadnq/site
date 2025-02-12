@@ -1,3 +1,5 @@
+import { heroTextAnimation } from './src/utils/animation';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
@@ -55,6 +57,12 @@ export default {
         sans: ['Alegreya Sans', 'sans-serif'],
         display: ['Farro', 'sans-serif'],
         'display-2': ['Kalam'],
+      },
+      animation: {
+        [heroTextAnimation.name]: `${heroTextAnimation.name} 1.3s`,
+      },
+      keyframes: {
+        [heroTextAnimation.name]: heroTextAnimation.keyframes,
       },
     },
   },
