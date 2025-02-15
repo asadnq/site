@@ -3,9 +3,12 @@ import Base from '@/layouts/Base.astro';
 import { ProjectCard } from '@/components/project-card.tsx';
 import { getCollection } from 'astro:content';
 
-const projects = (await getCollection('project')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const projects = (
+  await getCollection('project').then((res) => {
+    console.log(res.map((el) => `${el.data.startDate} ${el.data.title}`));
+    return res;
+  })
+).sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf());
 ---
 
 <Base>

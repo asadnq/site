@@ -16,7 +16,7 @@ type Props = CollectionEntry<'project'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, updatedDate, heroImage } = post.data;
+const { title, description, startDate, updatedDate, heroImage } = post.data;
 ---
 
 <!-- <div class="hero-image">
@@ -30,7 +30,7 @@ const { title, description, pubDate, updatedDate, heroImage } = post.data;
           class="text-sm text-accent font-semibold flex flex-col sm:flex-row sm:items-center sm:gap-4"
         >
           <FormattedDate
-            date={pubDate}
+            date={startDate}
             class:list={['text-muted-foreground', 'font-medium']}
           />
           {

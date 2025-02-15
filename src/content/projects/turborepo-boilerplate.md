@@ -1,7 +1,7 @@
 ---
 title: 'Turborepo Boilerplate'
 description: 'A boilerplate for Turborepo'
-pubDate: 'Jul 08 2022'
+startDate: '2022-07-08'
 heroImage: '/blog-placeholder-3.jpg'
 techStackIds: ['react', 'ts', 'tailwind-css', 'turborepo', 'next-js']
 ---
