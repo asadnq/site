@@ -4,6 +4,8 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { render } from 'astro:content';
 import FormattedDate from '@/components/FormattedDate.astro';
+import { Button } from '@/components/ui/button';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
 export async function getStaticPaths() {
   const posts = await getCollection('project');
@@ -25,9 +27,16 @@ const { title, description, startDate, updatedDate, heroImage } = post.data;
 <Base>
   <article class="mx-auto max-w-3xl pt-12 px-4">
     <div class="prose prose-lg dark:prose-invert">
-      <header class="mb-6">
+      <a href="/projects" class="flex flex-row gap-4 items-center">
+        <ArrowLeftIcon />
+        Back to overview
+      </a>
+      <header class="my-12">
+        <h1 class="mt-2 text-5xl font-bold text-gradient">
+          {title}
+        </h1>
         <div
-          class="text-sm text-accent font-semibold flex flex-col sm:flex-row sm:items-center sm:gap-4"
+          class="text-sm text-muted-foreground font-semibold flex flex-col sm:flex-row sm:items-center sm:gap-4"
         >
           <FormattedDate
             date={startDate}
@@ -41,16 +50,9 @@ const { title, description, startDate, updatedDate, heroImage } = post.data;
             )
           }
         </div>
-        <h1 class="mt-2 text-4xl font-bold text-gradient">
-          {title}
-        </h1>
-        <div
-          class="mt-4 h-1 w-full bg-gradient-to-r from-primary via-card to-transparent rounded-sm"
-        >
-        </div>
       </header>
-      <section>
-        <Content />
+      <section class="markdown-content">
+        <Content class="prose markdown-content" />
       </section>
     </div>
   </article>

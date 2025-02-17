@@ -1,6 +1,7 @@
 import type { TechStackId } from './personal-info/tech-stack-list';
 import StackIcon from 'tech-stack-icons';
 import { allTechStackItems } from './personal-info/tech-stack-list';
+import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 
 export const TechStack = ({
   techStackId,
@@ -11,29 +12,36 @@ export const TechStack = ({
 }) => {
   const techStack = allTechStackItems.find((el) => el.id === techStackId);
 
-  if (!techStack) {
-    return <span>TechStack not found</span>;
-  }
-
   return (
-    <a href={techStack.url} target="_blank">
-      <div className="flex flex-col items-center">
-        {!techStack.logoId ? (
-          <img
-            className={`w-[${size}px] h-[${size}px]`}
-            src={techStack.logo!}
-            alt={techStack.name}
-          />
-        ) : (
-          <StackIcon
-            name={techStack.logoId}
+    // <a href={techStack.url} target="_blank">
+    <div className="flex flex-col items-center">
+      {!techStack?.logoId ? (
+        <Avatar>
+          <AvatarImage
+            src={techStack?.logo!}
+            alt={techStack?.name ?? techStackId}
             style={{
               height: size,
               width: size,
             }}
           />
-        )}
-      </div>
-    </a>
+          <AvatarFallback>
+            {techStackId
+              .split('-')
+              .map((el) => el[0].toUpperCase())
+              .join('')}
+          </AvatarFallback>
+        </Avatar>
+      ) : (
+        <StackIcon
+          name={techStack.logoId}
+          style={{
+            height: size,
+            width: size,
+          }}
+        />
+      )}
+    </div>
+    // </a>
   );
 };

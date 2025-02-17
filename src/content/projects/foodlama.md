@@ -32,16 +32,13 @@ Foodlama is a start-up focused on improving shopping experience for people with 
 
 Foodlama works by updating the interface of the retailers site. For example, it adds a label on top of a food product to indicate whether it is suitable with user's dietary preferences. Each retailer has its own interface and UI, so we had to build a custom solution for each retailer.
 
-#### Solution
-
-To minimize the effort, we modularized the code and created a layer that's specific to each retailer. With this approach, we were able to support multiple retailers with minimal effort by creating a new connector for each retailer.
+**Solution** To minimize the effort, we modularized the code and created a layer that's specific to each retailer. With this approach, we were able to support multiple retailers with minimal effort by creating a new connector for each retailer.
 
 ### Gathering and labelling ingredients data
 
 We couldn't find any public data or APIS of ingredients and their relation to dietary preferences.
 
-**Solution**
-We scrapped the ingredients from retailer websites and labelled their compatibility with the supported dietary preferences. We also built an internal tool to review and help us label the data.
+**Solution**: We scrapped the ingredients from retailer websites and labelled their compatibility with the supported dietary preferences. We also built an internal tool to review and help us label the data.
 
 > **Notes**: We built this before the widespread of LLM such as ChatGPT. If I were to build this again, I would use RAG (Retrieval Augmented Generation) to generate the data.
 

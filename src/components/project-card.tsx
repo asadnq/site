@@ -32,7 +32,9 @@ export function ProjectCard({
           <h2 className="text-2xl font-bold text-foreground">{title}</h2>
           <p className="text-muted-foreground text-sm">{description}</p>
         </div>
-        {techStackComponent}
+        <div className="flex flex-row items-center justify-end gap-x-4 flex-wrap pt-4">
+          {techStackComponent}
+        </div>
       </div>
       {/* </a> */}
     </a>
