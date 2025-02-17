@@ -1,3 +1,4 @@
+import { Badge } from './ui/badge';
 import {
   Menubar,
   MenubarContent,
@@ -8,7 +9,7 @@ import {
 
 const menu = [
   { name: 'Projects', href: '/projects' },
-  { name: 'Blogs', href: '/blog' },
+  { name: 'Blogs', href: '/blog', disabled: true },
   { name: 'Resume', href: '/resume' },
   { name: 'About', href: '/about' },
 ];
@@ -23,14 +24,22 @@ export const Navbar = () => {
           </a>
         </div>
         <div className="hidden sm:flex items-center gap-x-4">
-          {menu.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-xl font-bold text-foreground">
-              {item.name}
-            </a>
-          ))}
+          {menu.map((item) =>
+            item.disabled ? (
+              <span className="text-xl font-bold text-muted-foreground flex flex-row items-center gap-x-2 cursor-not-allowed">
+                {item.name}
+                <Badge variant="outline">Soon</Badge>
+              </span>
+            ) : (
+              <a
+                key={item.name}
+                href={item.href}
+                data-visited={window.location.pathname === item.href}
+                className="text-xl font-bold text-foreground data-[visited=true]:text-primary">
+                {item.name}
+              </a>
+            ),
+          )}
         </div>
         <Menubar className="block sm:hidden">
           <MenubarMenu>

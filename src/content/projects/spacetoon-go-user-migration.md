@@ -1,7 +1,7 @@
 ---
 title: 'Spacetoon Go User Migration'
 description: 'Migrated users from the old database to the new database, ensuring seamless data transfer and maintaining data integrity.'
-techStackIds: ['typescript', 'node-js', 'airflow', 'python', 'postgresql']
+	techStackIds: ['ts', 'node-js', 'postgres', 'airflow', 'python']
 relatedCompanies: ['spacetoon-go', 'cofoundery']
 startDate: '2023-04-01'
 ---

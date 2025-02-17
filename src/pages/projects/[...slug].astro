@@ -1,10 +1,8 @@
 ---
 import Base from '@/layouts/Base.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
 import { render } from 'astro:content';
 import FormattedDate from '@/components/FormattedDate.astro';
-import { Button } from '@/components/ui/button';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
 export async function getStaticPaths() {
@@ -25,7 +23,7 @@ const { title, description, startDate, updatedDate, heroImage } = post.data;
       {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
     </div> -->
 <Base>
-  <article class="mx-auto max-w-3xl pt-12 px-4">
+  <article class="py-8 px-4 sm:px-4">
     <div class="prose prose-lg dark:prose-invert">
       <a href="/projects" class="flex flex-row gap-4 items-center">
         <ArrowLeftIcon />
@@ -36,7 +34,7 @@ const { title, description, startDate, updatedDate, heroImage } = post.data;
           {title}
         </h1>
         <div
-          class="text-sm text-muted-foreground font-semibold flex flex-col sm:flex-row sm:items-center sm:gap-4"
+          class="text-sm py-2 text-muted-foreground font-semibold flex flex-col sm:flex-row sm:items-center sm:gap-4"
         >
           <FormattedDate
             date={startDate}

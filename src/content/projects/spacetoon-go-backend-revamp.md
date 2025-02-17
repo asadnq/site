@@ -5,13 +5,13 @@ techStackIds:
   [
     'nest-js',
     'apollo-graphql',
-    'apollo-supergraph',
-    'typescript',
+    'ts',
     'nx',
     'node-js',
 		'docker',
 		'postgresql',
 		'redis',
+    'apollo-supergraph',
 		'mongo-db',
   ]
 startDate: '2022-11-01'

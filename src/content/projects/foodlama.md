@@ -4,8 +4,8 @@ description: 'Developed a browser extension that helps users with dietary prefer
 techStackIds:
   [
     'browser-extension',
-    'react-js',
-    'typescript',
+    'react',
+    'ts',
     'jest',
     'express-js',
     'mongo-db',

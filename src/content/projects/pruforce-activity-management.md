@@ -1,7 +1,7 @@
 ---
 title: 'PRUForce Activity Management'
 description: 'Developed a browser extension that helps users with dietary prefernce to grocery shopping online'
-techStackIds: ['react-js', 'redux', 'redux-saga']
+techStackIds: ['react', 'redux', 'redux-saga']
 relatedCompanies: ['prudential', 'barito-bit']
 startDate: '2019-06-19'
 ---

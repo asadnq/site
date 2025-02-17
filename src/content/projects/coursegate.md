@@ -1,7 +1,7 @@
 ---
 title: 'Coursegate (now Grumpy Royale)'
 description: 'Developed a browser extension that helps users with dietary prefernce to grocery shopping online'
-techStackIds: ['flutter', 'firebase', 'reactivex']
+techStackIds: ['flutter', 'firebase', 'reactive-x']
 relatedCompanies: ['cofoundery']
 startDate: '2020-01-04'
 ---
