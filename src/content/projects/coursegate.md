@@ -10,15 +10,27 @@ startDate: '2020-01-04'
 
 Coursegate was an education app that provide k-12 courses and quizzes. This project pivoted into a coding learning platform named Grumpy Royal.
 
+## Key Features
+
+- 📚 **Courses & Quizzes** – Explore a variety of courses and interactive quizzes, all within the app.
+- 👤 **Multiple Profiles** – Create and manage multiple profiles to track individual progress separately.
+- 🌐 **Multi-Language Support** – Effortlessly switch between languages for a seamless learning experience.
+
 ## challenges & solutions
 
 I'm working on an existing codebase, the challenges included here are some of my refactorings result.
 
-### inefficient data streaming
+### Inefficient data streaming
 
-The app made abundant connections to firestore streaming, which causes a performance problem and increased bill in Firebase
+_The app made abundant connections to firestore streaming, which causes a performance problem and increased bill in Firebase._
 
-The solution was to cache the streaming connection so they can be reused. This refactoring drops the number of created connections by 10 times.
+**Solution**: The solution was to cache the streaming connection so they can be reused. This refactoring **dropped the number of created connections by 10 times**.
+
+### Improving code architecture
+
+_The codebase was not well-structured, making it difficult to maintain and extend._
+
+**Solution**: We refactored the codebase by extracting reusable widgets, and adopt a well-defined state management pattern.
 
 ## outcome
 

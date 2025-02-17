@@ -25,16 +25,6 @@ startDate: '2022-11-01'
 
 ## Challenges & Solutions
 
-### Challenge: Legacy System Migration
-
-_The old platform was built with outdated technologies, making migration complex._  
-✅ **Solution**: We incrementally migrated to Next.js while ensuring backward compatibility.
-
-### Challenge: Improving Streaming Performance
-
-_Latency issues affected user experience._  
-✅ **Solution**: Optimized media delivery and caching strategies.
-
 ## My Contributions
 
 ## Screenshots

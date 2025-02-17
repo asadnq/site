@@ -21,26 +21,34 @@ Foodlama is a start-up focused on improving shopping experience for people with 
 
 ## Key Features
 
-- Supports multiple retailers
-- Multiple profile customization
-- Dietary preference labeling
-- Alternative product recommendation
+- 🛍 **Supports Multiple Retailers** – Shop across various retailers.
+- 👤 **Customizable Profiles** – Personalize the shopping experience to match users' dietary needs.
+- 🏷 **Dietary Preference Labeling** – Instantly identify products that align with dietary preferences.
+- ⭐ **Smart Recommendations** – Receive tailored product suggestions based on users' diets.
 
 ## Challenges & Solutions
 
 ### Supporting multiple retailers
 
-Foodlama works by updating the interface of the retailers site. For example, it adds a label on top of a food product to indicate whether it is suitable with user's dietary preferences. Each retailer has its own interface and UI, so we had to build a custom solution for each retailer.
+_Foodlama works by updating the interface of the retailers site. For example, it adds a label on top of a food product to indicate whether it is suitable with user's dietary preferences. Each retailer has its own interface and UI, so we had to build a custom solution for each retailer._
 
 **Solution** To minimize the effort, we modularized the code and created a layer that's specific to each retailer. With this approach, we were able to support multiple retailers with minimal effort by creating a new connector for each retailer.
 
 ### Gathering and labelling ingredients data
 
-We couldn't find any public data or APIS of ingredients and their relation to dietary preferences.
+_We couldn't find any public data or APIS of ingredients and their relation to dietary preferences._
 
-**Solution**: We scrapped the ingredients from retailer websites and labelled their compatibility with the supported dietary preferences. We also built an internal tool to review and help us label the data.
+**Solution**: We scrapped the ingredients from retailer websites and labelled their compatibility with the supported dietary preferences. We also built an internal tool to review and help us to label the data.
 
 > **Notes**: We built this before the widespread of LLM such as ChatGPT. If I were to build this again, I would use RAG (Retrieval Augmented Generation) to generate the data.
+
+## Contributions
+
+- Led the developers team, responsible for planning and requirement gathering.
+- Architected the project.
+- Developed the custom connector for each retailer.
+- Implemented the core analysis function which is used to determine the compatibility of ingredients with dietary preferences.
+- Continuously improve the core analysis function by testing it against more products and refining the data.
 
 ## Outcome
 

@@ -9,7 +9,7 @@ startDate: '2025-01-01'
 
 ## Overview
 
-Spacetoon Go Web Redesign is a complete rebuild of the platform, featuring a new brand identity, improved UX, and a modernized tech stack. This project comes with a new set of features from payments to streaming, making it possible for users to enjoy the best of Spacetoon Go.
+Spacetoon Go Web Redesign is a complete rebuild of the platform, featuring a new brand identity, improved UX, and a modernized tech stack. This project comes with a new set of features from payments to streaming, making it possible for users to enjoy the best of Spacetoon Go in a web browser.
 
 ## Key Features
 
@@ -17,41 +17,41 @@ Spacetoon Go Web Redesign is a complete rebuild of the platform, featuring a new
 - ⚡ **Performance Optimization** – Faster load times and improved responsiveness
 - 🔍 **Enhanced Search & Navigation** – Users can find content more easily
 - 📱 **Mobile-First Design** – Optimized for seamless cross-device experiences
-- 🌍 **Multilingual Support** – Built with internationalization in mind
-
-## Tech Stack
-
-- **Frontend**: Next.js, React, Tailwind CSS, Typescript, React-Query
-- **Localization**: next-intl
-- **Misc**: Turborepo, Sentry, Rudderstack
+- 🌐 **Multilingual Support** – Built with internationalization in mind
 
 ## Challenges & Solutions
 
-<!-- TODO: Update challenges -->
+### Ensuring user events correctness
 
-### Challenge: Legacy System Migration
+_Ensuring captured user events are valid, i.e. the event is fired under the correct circumstance and with the correct parameters._
 
-_The old platform was built with outdated technologies, making migration complex._
-✅ **Solution**: We incrementally migrated to Next.js while ensuring backward compatibility.
+**Solution**: We parse event parameters, and added assertion fields to ensure the event is valid.
 
-### Challenge: Improving Streaming Performance
+### Improving web app performance
 
-_Latency issues affected user experience._
-✅ **Solution**: Optimized media delivery and caching strategies.
+_Having a better performance improvement is one of our goals in rewriting the web-app._
+
+**Solution**: We render most of the components on the server-side, and only hydrate the client-side when needed.
+
+### Module reusability
+
+_The new Spacetoon Web consists of multiple applications, and we need to ensure that the codebase is modular and reusable._
+
+**Solution**: We created a monorepo with shared codebase, and used Turbo Repo to manage the codebase.
 
 ## My Contributions
 
-- Led frontend development, implementing the new UI/UX.
-- Integrated authentication using NextAuth.
-- Optimized API calls for better performance.
-
-## Screenshots
-
-![Homepage Preview](/images/spacetoon-go-homepage.png)
-![User Dashboard](/images/spacetoon-go-dashboard.png)
+- Led the developers team, responsible for planning and requirement gathering.
+- Design the architecture of the project.
+- Integrating TAP payment to the platform.
+- Implemented the new UI/UX design.
 
 ## Outcome
 
-🚀 Successfully launched the new platform, increasing user engagement by X% and reducing page load time by Y%.
+🚀 Successfully launched the new platform to Turkey region.
 
 [🔗 Visit Project](https://spacetoongo.com)
+
+---
+
+contributions
