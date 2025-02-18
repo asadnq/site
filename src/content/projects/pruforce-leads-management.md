@@ -3,6 +3,7 @@ title: 'PRUForce Leads Management'
 description: 'Enhanced PRUForce with a leads management module to streamline prospect handling and distribution'
 techStackIds: ['react', 'redux', 'redux-saga']
 relatedCompanies: ['prudential', 'barito-bit']
+startDate: '2019-06-19'
 ---
 
 ## Overview
