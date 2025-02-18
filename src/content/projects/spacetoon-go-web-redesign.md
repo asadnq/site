@@ -15,7 +15,6 @@ Spacetoon Go Web Redesign is a complete rebuild of the platform, featuring a new
 
 - 🌟 **New Brand Identity** – Updated UI to align with the refreshed Spacetoon Go branding
 - ⚡ **Performance Optimization** – Faster load times and improved responsiveness
-- 🔍 **Enhanced Search & Navigation** – Users can find content more easily
 - 📱 **Mobile-First Design** – Optimized for seamless cross-device experiences
 - 🌐 **Multilingual Support** – Built with internationalization in mind
 
@@ -49,9 +48,3 @@ _The new Spacetoon Web consists of multiple applications, and we need to ensure 
 ## Outcome
 
 🚀 Successfully launched the new platform to Turkey region.
-
-[🔗 Visit Project](https://spacetoongo.com)
-
----
-
-contributions

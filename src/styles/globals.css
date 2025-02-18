@@ -17,8 +17,8 @@
     --muted-foreground: 210 10% 60%;
     --accent: 276 68% 75%;
     --accent-foreground: 0 0% 100%;
-    --support: 14 90% 70%;
-    --support-accent: 0 0% 100%;
+    --accent2: 14 90% 70%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 1 83% 63%;
     --destructive-foreground: 0 0% 100%;
     --border: 210 30% 28%;
@@ -174,5 +174,5 @@ body {
 }
 
 .markdown-content code {
-  @apply bg-support text-support-foreground px-1 py-0.5 rounded;
+  @apply bg-accent2 text-accent2-foreground px-1 py-0.5 rounded;
 }

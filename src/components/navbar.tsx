@@ -28,7 +28,9 @@ export const Navbar = () => {
             item.disabled ? (
               <span className="text-xl font-bold text-muted-foreground flex flex-row items-center gap-x-2 cursor-not-allowed">
                 {item.name}
-                <Badge variant="outline">Soon</Badge>
+                <Badge variant="outline" className="text-accent">
+                  Soon
+                </Badge>
               </span>
             ) : (
               <a
