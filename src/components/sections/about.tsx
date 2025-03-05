@@ -19,11 +19,10 @@ export const AboutSection = () => {
           transition={{ duration: 0.5, delay: 0.5 }}>
           I'm an experienced full-stack with a proven background spanning over
           5+ years, coupled with valuable exposure to project and team
-          management. I believe developer experience is just as important the
-          software's performance itself. Therefore, I'm keen not only developing
-          a performant software with seamless user experience, but also strive
-          to make it easy for the developers to maintain and extend by writing a
-          well documented and testable codebase.
+          management. My experience include building and maintaining web-app,
+          server-side API, cross-platform mobile app, and browser extensions.
+          I’ve built and maintained web apps, server-side APIs, cross-platform
+          mobile apps, and browser extensions.
         </motion.p>
         <div className="h-4"></div>
         <motion.p
@@ -31,6 +30,15 @@ export const AboutSection = () => {
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.75 }}>
+          In addition, I’ve been actively learning DevOps to expand my skill set
+          and am eager to gain hands-on experience in this area.
+        </motion.p>
+        <div className="h-4"></div>
+        <motion.p
+          className="text-foreground text-xl leading-relaxed col-span-2 row-start-2"
+          initial={{ y: 25, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}>
           Outside of work, I'm also active in local communities. I frequently
           attend local bookclub meetings where I share about my reading journey,
           and listen to the stories of others. I'm also a coordinator of a

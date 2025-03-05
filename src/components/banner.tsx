@@ -29,12 +29,16 @@ export const Banner = () => {
           transition={{ delay: animationStep++ * delay, duration: 0.3 }}
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1, type: 'spring' }}
-          className="relative left-[40px] text-xl font-regular"
+          className="relative left-[40px] text-xl font-regular text-center"
           onAnimationComplete={() =>
             setTimeout(() => setDisplayContacts(true), 300)
           }>
-          A <span className="font-bold text-secondary">software developer</span>{' '}
-          with a passion for literature, languages, and community.
+          A{' '}
+          <span className="font-bold text-secondary ">
+            full-stack developer
+          </span>{' '}
+          with 5+ years of experience in the professional industry
+          <br /> Based in Bandung, Indonesia 🇮🇩
         </motion.p>
       </div>
       <div className="h-[48px]">{displayContacts && <ContactList />}</div>
