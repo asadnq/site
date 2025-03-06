@@ -22,7 +22,7 @@
   - [x] Night owl with gradient
 - [x] About me page
 - [x] Under development marker
-- [ ] Project structure
+- [x] Project structure
 - [ ] Project page: filter by tech stack
 - [x] Animation on initial load
 - Decoration
@@ -36,3 +36,12 @@
 
 - Experience -> Project
 - TechStack -> Project
+
+---
+
+## Accessibility
+
+- [ ] Minimize JavaScript
+- [ ] Download tech-stack icon
+- [ ] Stop using React component
+- [ ] Animate the UI using css instead of Motion

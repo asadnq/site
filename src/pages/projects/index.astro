@@ -1,6 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
-import { ProjectCard } from '@/components/project-card.tsx';
+import ProjectCard from '@/components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
 
 const projects = (
@@ -24,10 +24,7 @@ const projects = (
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-8">
       {
         projects.map((project) => (
-          <ProjectCard
-            client:only="react"
-            project={{ ...project.data, id: project.id }}
-          />
+          <ProjectCard project={{ ...project.data, id: project.id }} />
         ))
       }
     </div>
