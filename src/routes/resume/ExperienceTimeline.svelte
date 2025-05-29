@@ -18,7 +18,7 @@
 
 <div class="flex flex-col gap-12">
 	{#each experiences as exp, i}
-		<div class="grid grid-cols-[5px_1fr] gap-x-4 md:grid-cols-[200px_15px_1fr] md:grid-rows-1">
+		<div class="grid grid-cols-[1fr] gap-x-4 md:grid-cols-[200px_15px_1fr] md:grid-rows-1">
 			<!-- Date (only on md and up) -->
 			<div class="hidden flex-col items-end pr-2 text-right md:flex">
 				<span class="text-sm font-semibold">
@@ -29,7 +29,7 @@
 				</span>
 			</div>
 
-			<div class="relative flex-col items-center md:flex">
+			<div class="relative flex-col items-center md:flex hidden">
 				<div class="bg-primary-500 z-10 size-4 rounded-full"></div>
 				{#if i < experiences.length - 1}
 					<div
@@ -39,7 +39,7 @@
 			</div>
 
 			<!-- Content -->
-			<div class="flex flex-col gap-y-4 ps-4 md:ps-0">
+			<div class="flex flex-col gap-y-4 ps-0">
 				<!-- Date (on mobile only) -->
 				<div class="flex flex-col md:hidden">
 					<span class="text-base font-semibold">
