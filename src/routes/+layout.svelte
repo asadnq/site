@@ -1,19 +1,38 @@
 <script lang="ts">
-	import Header from './Header.svelte';
 	import '../app.css';
+	import { page } from '$app/state';
+	import { Tween } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
+	import { ArrowLeftIcon } from '@lucide/svelte';
 
 	let { children } = $props();
 	const today = new Date();
+	const isRoot = $derived(page.url.pathname === '/');
+
+	const scaleTimeFn = Tween.of(() => 1.5, { duration: 300, easing: cubicOut });
 </script>
 
 <div class="app min-h-screen">
-	<!-- <Header /> -->
-
+	<header class="flex flex-row items-center gap-x-2 px-5 py-12">
+		{#if !isRoot}
+			<button class="btn-icon transition" style="transform: scale({scaleTimeFn})">
+				<ArrowLeftIcon width={24} height={24} />
+			</button>
+		{/if}
+		<a href="/">
+			<span
+				class="font-display text-2xl font-extrabold"
+				class:text-white={isRoot}
+				class:text-primary={!isRoot}
+				class:text-gradient={!isRoot}>asadnq.dev</span
+			>
+		</a>
+	</header>
 	<main>
 		{@render children()}
 	</main>
 
-	<footer class="text-muted-foreground flex flex-col gap-y-2 px-4 py-4 mt-12 text-center text-sm">
+	<footer class="text-muted-foreground mt-12 flex flex-col gap-y-2 px-4 py-4 text-center text-sm">
 		<p>&copy; {today.getFullYear()} Asadnq. All rights reserved</p>
 		<p>
 			This site is built with <a

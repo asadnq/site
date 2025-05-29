@@ -1,12 +1,6 @@
 <script lang="ts">
 	import type { Experience } from '$lib/schema';
 	import { getDurationString } from '$lib/utils/misc';
-	import ExperienceCard from './ExperienceCard.svelte';
-	import { AppBar } from '@skeletonlabs/skeleton-svelte';
-	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
-	import Paperclip from '@lucide/svelte/icons/paperclip';
-	import Calendar from '@lucide/svelte/icons/calendar';
-	import CircleUser from '@lucide/svelte/icons/circle-user';
 
 	export let experiences: Experience[] = [];
 
@@ -22,14 +16,6 @@
 	};
 </script>
 
-<section class="flex flex-col">
-	<AppBar background="bg-transparent">
-		{#snippet lead()}
-			<ArrowLeft size={24} />
-		{/snippet}
-		<h1 class="h1 text-gradient text-transparent">Experience</h1>
-	</AppBar>
-</section>
 <div class="flex flex-col gap-12">
 	{#each experiences as exp, i}
 		<div class="grid grid-cols-[5px_1fr] gap-x-4 md:grid-cols-[200px_15px_1fr] md:grid-rows-1">
@@ -66,13 +52,13 @@
 
 				<!-- Title and Summary -->
 				<div>
-					<h3 class="text-secondary-500 text-xl font-bold">{exp.title}</h3>
+					<h3 class="text-surface-100 text-xl font-extrabold">{exp.title}</h3>
 					<p class="mt-1 text-sm">{exp.summary}</p>
 				</div>
 
 				<!-- Responsibilities -->
 				<div class="flex flex-col gap-y-2">
-					<h4 class="text-secondary-500 text-base font-medium">Responsibilities</h4>
+					<h4 class="text-surface-100 text-base font-medium">Responsibilities</h4>
 					<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
 						{#each exp.responsibilities as responsibility}
 							<li>{responsibility}</li>
@@ -83,10 +69,10 @@
 				<!-- Tech Stack -->
 				{#if exp.techStack?.length}
 					<div class="flex flex-col gap-y-2">
-						<h4 class="text-secondary-500 text-base font-medium">Tech Stack</h4>
+						<h4 class="text-surface-100 text-base font-medium">Tech Stack</h4>
 						<div class="flex flex-wrap gap-2">
 							{#each exp.techStack as tech}
-								<span class="badge preset-tonal-tertiary rounded px-2 py-1 text-sm">{tech}</span>
+								<span class="badge preset-tonal-surface px-2 py-1 text-sm">{tech}</span>
 							{/each}
 						</div>
 					</div>
@@ -95,7 +81,7 @@
 				<!-- Projects -->
 				{#if exp.projects?.length}
 					<div class="flex flex-col gap-y-2">
-						<h4 class="text-secondary-500 text-base font-medium">Projects</h4>
+						<h4 class="text-surface-100 text-base font-medium">Projects</h4>
 						<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
 							{#each exp.projects as project}
 								<li>{project}</li>

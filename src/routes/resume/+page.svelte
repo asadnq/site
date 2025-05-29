@@ -1,13 +1,11 @@
 <script lang="ts">
-	import type { Experience } from '$lib/schema';
-	import ExperienceCard from './ExperienceCard.svelte';
 	import ExperienceTimeline from './ExperienceTimeline.svelte';
 	import { WORK_EXPERIENCES } from './data';
+	import { page } from '$app/state';
+	const isRoot = $derived(page.url.pathname !== '/');
 </script>
 
-<div class="space-y-6">
-	<!-- {#each WORK_EXPERIENCES as experience}
-		<ExperienceCard {experience} />
-	{/each} -->
+<section class="flex flex-col space-y-12">
+	<h2 class="h2 font-sans" class:text-white={isRoot} class:text-primary={!isRoot}>Experience</h2>
 	<ExperienceTimeline experiences={WORK_EXPERIENCES} />
-</div>
+</section>
