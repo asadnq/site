@@ -1,4 +1,4 @@
-import type { Experience } from '$lib/schema';
+import type { Experience } from '$lib/schemas';
 
 export const WORK_EXPERIENCES: Experience[] = [
 	{

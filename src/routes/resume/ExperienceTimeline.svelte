@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Experience } from '$lib/schema';
+	import type { Experience } from '$lib/schemas';
 	import { getDurationString } from '$lib/utils/misc';
 
 	export let experiences: Experience[] = [];
