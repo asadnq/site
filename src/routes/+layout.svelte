@@ -22,9 +22,10 @@
 		<a href="/">
 			<span
 				class="font-display text-2xl font-extrabold"
-				class:text-white={isRoot}
-				class:text-primary={!isRoot}
-				class:text-gradient={!isRoot}>asadnq.dev</span
+				class:text-black={isRoot}
+				class:text-primary-800={!isRoot}
+			>
+				asadnq.dev</span
 			>
 		</a>
 	</header>
@@ -36,7 +37,7 @@
 		<p>&copy; {today.getFullYear()} Asadnq. All rights reserved</p>
 		<p>
 			This site is built with <a
-				class="text-tertiary-500"
+				class="text-tertiary-700"
 				href="https://svelte.dev/docs/kit/introduction"
 				target="_blank">SvelteKit</a
 			>
@@ -57,7 +58,7 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
+		max-width: 84rem;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}

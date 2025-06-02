@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="relative flex-col items-center md:flex hidden">
-				<div class="bg-primary-500 z-10 size-4 rounded-full"></div>
+				<div class="bg-primary-700 z-10 size-4 rounded-full"></div>
 				{#if i < experiences.length - 1}
 					<div
 						class="bg-primary-300 absolute top-4 left-2 h-[calc(100%+3rem)] w-px md:left-[50%]"

@@ -8,23 +8,6 @@
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
-:root {
-	--font-body:
-		Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
-	font-family: var(--font-body);
-	color: var(--color-text);
-}
-
 @theme {
 	--font-sans: 'Alegreya Sans', sans-serif;
 	--font-display: 'Farro', sans-serif;
@@ -33,9 +16,17 @@
 
 @layer theme {
 	.text-gradient {
-		background-image: linear-gradient(to right, var(--color-primary-500), var(--color-secondary-900));
+		background-image: linear-gradient(
+			to right,
+			var(--color-primary-500),
+			var(--color-secondary-900)
+		);
 		background-clip: text;
 		color: transparent;
+	}
+
+	.brutalist-border {
+		@apply shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px];
 	}
 }
 
@@ -57,13 +48,13 @@ body {
 }
 
 [data-theme='custom'] {
-	--text-scaling: 1.2;
+	--text-scaling: 1.067;
 	--base-font-color: var(--color-surface-950);
-	--base-font-color-dark: #a1a1a1;
-	--base-font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+	--base-font-color-dark: var(--color-surface-50);
+	--base-font-family: system-ui, sans-serif;
 	--base-font-size: inherit;
 	--base-line-height: inherit;
-	--base-font-weight: normal;
+	--base-font-weight: 600;
 	--base-font-style: normal;
 	--base-letter-spacing: 0em;
 	--heading-font-color: inherit;
@@ -84,25 +75,25 @@ body {
 	--anchor-text-decoration-hover: underline;
 	--anchor-text-decoration-active: none;
 	--anchor-text-decoration-focus: none;
-	--spacing: 0.25rem;
-	--radius-base: 0.063rem;
-	--radius-container: 0.063rem;
-	--default-border-width: 2px;
-	--default-divide-width: 2px;
-	--default-ring-width: 2px;
-	--body-background-color: var(--color-surface-50);
+	--spacing: 0.28rem;
+	--radius-base: 0.375rem;
+	--radius-container: 0.75rem;
+	--default-border-width: 1px;
+	--default-divide-width: 1px;
+	--default-ring-width: 1px;
+	--body-background-color: var(--color-surface-500);
 	--body-background-color-dark: var(--color-surface-950);
-	--color-primary-50: oklch(97.52% 0.04 196.52deg);
-	--color-primary-100: oklch(94.17% 0.06 188.2deg);
-	--color-primary-200: oklch(91.19% 0.08 183.18deg);
-	--color-primary-300: oklch(88.13% 0.1 179.72deg);
-	--color-primary-400: oklch(85.53% 0.12 177.03deg);
-	--color-primary-500: oklch(82.91% 0.13 174.95deg);
-	--color-primary-600: oklch(75.76% 0.13 174.51deg);
-	--color-primary-700: oklch(68.71% 0.12 173.42deg);
-	--color-primary-800: oklch(61.25% 0.11 172.58deg);
-	--color-primary-900: oklch(53.87% 0.1 170.78deg);
-	--color-primary-950: oklch(45.98% 0.09 169.01deg);
+	--color-primary-50: oklch(97.72% 0.03 196.57deg);
+	--color-primary-100: oklch(95.21% 0.06 176.65deg);
+	--color-primary-200: oklch(92.94% 0.1 169.23deg);
+	--color-primary-300: oklch(90.73% 0.13 165.16deg);
+	--color-primary-400: oklch(89.03% 0.15 161.73deg);
+	--color-primary-500: oklch(87.62% 0.18 158.74deg);
+	--color-primary-600: oklch(80.62% 0.17 157.52deg);
+	--color-primary-700: oklch(73.51% 0.16 156.03deg);
+	--color-primary-800: oklch(66% 0.16 154.86deg);
+	--color-primary-900: oklch(58.59% 0.15 152.8deg);
+	--color-primary-950: oklch(50.97% 0.14 150.47deg);
 	--color-primary-contrast-dark: var(--color-primary-950);
 	--color-primary-contrast-light: var(--color-primary-50);
 	--color-primary-contrast-50: var(--color-primary-contrast-dark);
@@ -114,19 +105,19 @@ body {
 	--color-primary-contrast-600: var(--color-primary-contrast-dark);
 	--color-primary-contrast-700: var(--color-primary-contrast-dark);
 	--color-primary-contrast-800: var(--color-primary-contrast-dark);
-	--color-primary-contrast-900: var(--color-primary-contrast-light);
+	--color-primary-contrast-900: var(--color-primary-contrast-dark);
 	--color-primary-contrast-950: var(--color-primary-contrast-light);
-	--color-secondary-50: oklch(99.7% 0.01 106.57deg);
-	--color-secondary-100: oklch(97.18% 0.04 117.47deg);
-	--color-secondary-200: oklch(94.57% 0.07 118.63deg);
-	--color-secondary-300: oklch(92.14% 0.09 120.57deg);
-	--color-secondary-400: oklch(89.62% 0.12 121.08deg);
-	--color-secondary-500: oklch(87.3% 0.14 122.4deg);
-	--color-secondary-600: oklch(79.94% 0.14 122.79deg);
-	--color-secondary-700: oklch(72.37% 0.14 123.71deg);
-	--color-secondary-800: oklch(64.46% 0.14 124.18deg);
-	--color-secondary-900: oklch(56.53% 0.13 125.66deg);
-	--color-secondary-950: oklch(48.46% 0.13 127.31deg);
+	--color-secondary-50: oklch(100% 0 none);
+	--color-secondary-100: oklch(94.66% 0.03 307.12deg);
+	--color-secondary-200: oklch(89.51% 0.05 306.11deg);
+	--color-secondary-300: oklch(84.1% 0.08 305.05deg);
+	--color-secondary-400: oklch(78.99% 0.11 304.48deg);
+	--color-secondary-500: oklch(73.77% 0.14 304.04deg);
+	--color-secondary-600: oklch(66.43% 0.14 303.42deg);
+	--color-secondary-700: oklch(58.97% 0.14 302.39deg);
+	--color-secondary-800: oklch(50.99% 0.13 301.09deg);
+	--color-secondary-900: oklch(43.13% 0.13 299.4deg);
+	--color-secondary-950: oklch(35.02% 0.13 297.24deg);
 	--color-secondary-contrast-dark: var(--color-secondary-950);
 	--color-secondary-contrast-light: var(--color-secondary-50);
 	--color-secondary-contrast-50: var(--color-secondary-contrast-dark);
@@ -136,45 +127,45 @@ body {
 	--color-secondary-contrast-400: var(--color-secondary-contrast-dark);
 	--color-secondary-contrast-500: var(--color-secondary-contrast-dark);
 	--color-secondary-contrast-600: var(--color-secondary-contrast-dark);
-	--color-secondary-contrast-700: var(--color-secondary-contrast-dark);
-	--color-secondary-contrast-800: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-700: var(--color-secondary-contrast-light);
+	--color-secondary-contrast-800: var(--color-secondary-contrast-light);
 	--color-secondary-contrast-900: var(--color-secondary-contrast-light);
 	--color-secondary-contrast-950: var(--color-secondary-contrast-light);
-	--color-tertiary-50: oklch(100% 0 none);
-	--color-tertiary-100: oklch(94.98% 0.02 311.78deg);
-	--color-tertiary-200: oklch(89.78% 0.05 311.97deg);
-	--color-tertiary-300: oklch(84.78% 0.08 311.54deg);
-	--color-tertiary-400: oklch(79.65% 0.11 311.37deg);
-	--color-tertiary-500: oklch(74.76% 0.13 310.9deg);
-	--color-tertiary-600: oklch(67.5% 0.13 310.31deg);
-	--color-tertiary-700: oklch(59.84% 0.13 310.16deg);
-	--color-tertiary-800: oklch(52.11% 0.13 308.75deg);
-	--color-tertiary-900: oklch(44.06% 0.13 308.25deg);
-	--color-tertiary-950: oklch(36.06% 0.13 306.69deg);
+	--color-tertiary-50: oklch(98.86% 0.06 107.41deg);
+	--color-tertiary-100: oklch(96.73% 0.09 114.77deg);
+	--color-tertiary-200: oklch(94.62% 0.12 119.27deg);
+	--color-tertiary-300: oklch(92.66% 0.14 121.76deg);
+	--color-tertiary-400: oklch(90.74% 0.17 124.08deg);
+	--color-tertiary-500: oklch(88.96% 0.19 125.72deg);
+	--color-tertiary-600: oklch(81.44% 0.18 127.09deg);
+	--color-tertiary-700: oklch(74.07% 0.18 128.56deg);
+	--color-tertiary-800: oklch(66.23% 0.17 130.29deg);
+	--color-tertiary-900: oklch(58.53% 0.16 132.28deg);
+	--color-tertiary-950: oklch(50.32% 0.15 134.68deg);
 	--color-tertiary-contrast-dark: var(--color-tertiary-950);
 	--color-tertiary-contrast-light: var(--color-tertiary-50);
 	--color-tertiary-contrast-50: var(--color-tertiary-contrast-dark);
 	--color-tertiary-contrast-100: var(--color-tertiary-contrast-dark);
 	--color-tertiary-contrast-200: var(--color-tertiary-contrast-dark);
-	--color-tertiary-contrast-300: var(--color-tertiary-contrast-light);
-	--color-tertiary-contrast-400: var(--color-tertiary-contrast-light);
-	--color-tertiary-contrast-500: var(--color-tertiary-contrast-light);
-	--color-tertiary-contrast-600: var(--color-tertiary-contrast-light);
-	--color-tertiary-contrast-700: var(--color-tertiary-contrast-light);
-	--color-tertiary-contrast-800: var(--color-tertiary-contrast-light);
+	--color-tertiary-contrast-300: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-400: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-500: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-600: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-700: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-800: var(--color-tertiary-contrast-dark);
 	--color-tertiary-contrast-900: var(--color-tertiary-contrast-light);
 	--color-tertiary-contrast-950: var(--color-tertiary-contrast-light);
-	--color-success-50: oklch(100% 0 none);
-	--color-success-100: oklch(94.98% 0.02 311.78deg);
-	--color-success-200: oklch(89.78% 0.05 311.97deg);
-	--color-success-300: oklch(84.78% 0.08 311.54deg);
-	--color-success-400: oklch(79.65% 0.11 311.37deg);
-	--color-success-500: oklch(74.76% 0.13 310.9deg);
-	--color-success-600: oklch(67.5% 0.13 310.31deg);
-	--color-success-700: oklch(59.84% 0.13 310.16deg);
-	--color-success-800: oklch(52.11% 0.13 308.75deg);
-	--color-success-900: oklch(44.06% 0.13 308.25deg);
-	--color-success-950: oklch(36.06% 0.13 306.69deg);
+	--color-success-50: oklch(94.05% 0.09 178.66deg);
+	--color-success-100: oklch(91.62% 0.1 178.6deg);
+	--color-success-200: oklch(89.44% 0.11 177.16deg);
+	--color-success-300: oklch(87.13% 0.12 176.9deg);
+	--color-success-400: oklch(85.09% 0.13 175.45deg);
+	--color-success-500: oklch(82.91% 0.13 174.95deg);
+	--color-success-600: oklch(72.85% 0.12 175.7deg);
+	--color-success-700: oklch(62.4% 0.1 175.99deg);
+	--color-success-800: oklch(51.26% 0.08 178.28deg);
+	--color-success-900: oklch(39.72% 0.06 179.74deg);
+	--color-success-950: oklch(27.27% 0.04 185.29deg);
 	--color-success-contrast-dark: var(--color-success-950);
 	--color-success-contrast-light: var(--color-success-50);
 	--color-success-contrast-50: var(--color-success-contrast-dark);
@@ -183,7 +174,7 @@ body {
 	--color-success-contrast-300: var(--color-success-contrast-dark);
 	--color-success-contrast-400: var(--color-success-contrast-dark);
 	--color-success-contrast-500: var(--color-success-contrast-dark);
-	--color-success-contrast-600: var(--color-success-contrast-dark);
+	--color-success-contrast-600: var(--color-success-contrast-light);
 	--color-success-contrast-700: var(--color-success-contrast-light);
 	--color-success-contrast-800: var(--color-success-contrast-light);
 	--color-success-contrast-900: var(--color-success-contrast-light);
@@ -236,31 +227,32 @@ body {
 	--color-error-contrast-800: var(--color-error-contrast-light);
 	--color-error-contrast-900: var(--color-error-contrast-light);
 	--color-error-contrast-950: var(--color-error-contrast-light);
-	--color-surface-50: oklch(58.02% 0.04 254.68deg);
-	--color-surface-100: oklch(50.98% 0.04 251.17deg);
-	--color-surface-200: oklch(43.5% 0.04 251.31deg);
-	--color-surface-300: oklch(35.86% 0.04 246.59deg);
-	--color-surface-400: oklch(27.73% 0.04 247.42deg);
-	--color-surface-500: oklch(19.21% 0.05 242.58deg);
-	--color-surface-600: oklch(17.32% 0.04 238.65deg);
-	--color-surface-700: oklch(15.05% 0.03 236.18deg);
-	--color-surface-800: oklch(13.11% 0.03 231.07deg);
-	--color-surface-900: oklch(10.04% 0.02 233.5deg);
-	--color-surface-950: oklch(0% 0 none);
+	--color-surface-50: oklch(100% 0 none);
+	--color-surface-100: oklch(99.45% 0 67.9deg);
+	--color-surface-200: oklch(98.83% 0 84.4deg);
+	--color-surface-300: oklch(98.31% 0 67.83deg);
+	--color-surface-400: oklch(97.68% 0 78.25deg);
+	--color-surface-500: oklch(97.13% 0.01 75.38deg);
+	--color-surface-600: oklch(89.8% 0.01 84.49deg);
+	--color-surface-700: oklch(82.16% 0.01 75.38deg);
+	--color-surface-800: oklch(74.49% 0.01 84.51deg);
+	--color-surface-900: oklch(66.46% 0.01 75.37deg);
+	--color-surface-950: oklch(58.34% 0.01 84.53deg);
 	--color-surface-contrast-dark: var(--color-surface-950);
-	--color-surface-contrast-light: var(--color-surface-50);
+	--color-surface-contrast-light: var(--color-surface-300);
 	--color-surface-contrast-50: var(--color-surface-contrast-dark);
 	--color-surface-contrast-100: var(--color-surface-contrast-dark);
 	--color-surface-contrast-200: var(--color-surface-contrast-dark);
-	--color-surface-contrast-300: var(--color-surface-contrast-light);
-	--color-surface-contrast-400: var(--color-surface-contrast-light);
-	--color-surface-contrast-500: var(--color-surface-contrast-light);
-	--color-surface-contrast-600: var(--color-surface-contrast-light);
-	--color-surface-contrast-700: var(--color-surface-contrast-light);
+	--color-surface-contrast-300: var(--color-surface-contrast-dark);
+	--color-surface-contrast-400: var(--color-surface-contrast-dark);
+	--color-surface-contrast-500: var(--color-surface-contrast-dark);
+	--color-surface-contrast-600: var(--color-surface-contrast-dark);
+	--color-surface-contrast-700: var(--color-surface-contrast-dark);
 	--color-surface-contrast-800: var(--color-surface-contrast-light);
 	--color-surface-contrast-900: var(--color-surface-contrast-light);
 	--color-surface-contrast-950: var(--color-surface-contrast-light);
 }
+
 /* Create a custom preset in your global stylesheet */
 .preset-gradient-one {
 	background-image: linear-gradient(to right, var(--color-primary-900), var(--color-primary-200));
