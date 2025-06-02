@@ -10,7 +10,6 @@
 </svelte:head>
 
 <article class="mx-0 max-w-4xl px-0 py-8 sm:mx-auto sm:px-4 sm:py-12">
-	<!-- <div class="bg-surface-500 brutalist-border space-y-6 rounded-2xl p-2 sm:p-6"> -->
 	<h1 class="text-primary-800 text-4xl font-extrabold tracking-tight">
 		{project.title}
 	</h1>
