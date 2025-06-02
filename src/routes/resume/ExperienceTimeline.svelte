@@ -16,7 +16,9 @@
 	};
 </script>
 
-<div class="flex flex-col gap-12">
+<div
+	class="border-4 border-black brutalist-border flex flex-col gap-12 rounded-2xl bg-emerald-200 px-4 py-6 text-emerald-800"
+>
 	{#each experiences as exp, i}
 		<div class="grid grid-cols-[1fr] gap-x-4 md:grid-cols-[200px_15px_1fr] md:grid-rows-1">
 			<!-- Date (only on md and up) -->
@@ -24,16 +26,16 @@
 				<span class="text-sm font-semibold">
 					{formatDateRange(exp.dateStart, exp.dateEnd, exp.status)}
 				</span>
-				<span class="text-surface-100 text-xs font-medium">
+				<span class="text-emerelad-800 text-xs font-medium">
 					{getDurationString(exp.dateStart, exp.dateEnd)}
 				</span>
 			</div>
 
-			<div class="relative flex-col items-center md:flex hidden">
-				<div class="bg-primary-700 z-10 size-4 rounded-full"></div>
+			<div class="relative hidden flex-col items-center md:flex">
+				<div class="z-10 size-4 rounded-full bg-emerald-800"></div>
 				{#if i < experiences.length - 1}
 					<div
-						class="bg-primary-300 absolute top-4 left-2 h-[calc(100%+3rem)] w-px md:left-[50%]"
+						class="absolute top-4 left-2 h-[calc(100%+3rem)] w-px bg-emerald-800 md:left-[50%]"
 					></div>
 				{/if}
 			</div>
@@ -52,13 +54,13 @@
 
 				<!-- Title and Summary -->
 				<div>
-					<h3 class="text-surface-100 text-xl font-extrabold">{exp.title}</h3>
+					<h3 class="text-xl font-black text-black">{exp.title}</h3>
 					<p class="mt-1 text-sm">{exp.summary}</p>
 				</div>
 
 				<!-- Responsibilities -->
 				<div class="flex flex-col gap-y-2">
-					<h4 class="text-surface-100 text-base font-medium">Responsibilities</h4>
+					<h4 class="text-emerelad-900 text-base font-bold">Responsibilities</h4>
 					<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
 						{#each exp.responsibilities as responsibility}
 							<li>{responsibility}</li>
@@ -69,10 +71,10 @@
 				<!-- Tech Stack -->
 				{#if exp.techStack?.length}
 					<div class="flex flex-col gap-y-2">
-						<h4 class="text-surface-100 text-base font-medium">Tech Stack</h4>
+						<h4 class="text-emerelad-900 text-base font-bold">Tech Stack</h4>
 						<div class="flex flex-wrap gap-2">
 							{#each exp.techStack as tech}
-								<span class="badge preset-tonal-surface px-2 py-1 text-sm">{tech}</span>
+								<span class="badge bg-indigo-200 px-2 py-1 text-sm text-indigo-800">{tech}</span>
 							{/each}
 						</div>
 					</div>
@@ -81,7 +83,7 @@
 				<!-- Projects -->
 				{#if exp.projects?.length}
 					<div class="flex flex-col gap-y-2">
-						<h4 class="text-surface-100 text-base font-medium">Projects</h4>
+						<h4 class="text-emerelad-900 text-base font-bold">Projects</h4>
 						<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
 							{#each exp.projects as project}
 								<li>{project}</li>

@@ -26,7 +26,11 @@
 	}
 
 	.brutalist-border {
-		@apply shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px];
+		@apply border-4 border-black shadow-[5px_5px_0_0_rgba(0,0,0,1)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] duration-300;
+	}
+
+	.brutalist-shadow-xl {
+		@apply shadow-[10px_10px_0_0_rgba(0,0,0,1)] 
 	}
 }
 
@@ -239,7 +243,7 @@ body {
 	--color-surface-900: oklch(66.46% 0.01 75.37deg);
 	--color-surface-950: oklch(58.34% 0.01 84.53deg);
 	--color-surface-contrast-dark: var(--color-surface-950);
-	--color-surface-contrast-light: var(--color-surface-300);
+	--color-surface-contrast-light: oklch(0% 0 0deg);
 	--color-surface-contrast-50: var(--color-surface-contrast-dark);
 	--color-surface-contrast-100: var(--color-surface-contrast-dark);
 	--color-surface-contrast-200: var(--color-surface-contrast-dark);

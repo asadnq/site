@@ -3,15 +3,24 @@
 	const menu = [
 		{
 			title: 'View my projects',
-			href: '/projects'
+			href: '/projects',
+			classNames: 'bg-sky-200 text-sky-800 hover:bg-sky-800 hover:text-sky-200'
 		},
 		{
 			title: 'Resumé',
-			href: '/resume'
+			href: '/resume',
+			classNames: 'bg-emerald-200 text-emerald-800 hover:bg-emerald-800 hover:text-emerald-200'
 		},
 		{
 			title: 'More About me',
-			href: '/about'
+			href: '/about',
+			classNames: 'bg-lime-200 text-lime-800 hover:bg-lime-800 hover:text-lime-200'
+		},
+		{
+			title: 'Blog',
+			href: '/blog',
+			disabled: true,
+			classNames: 'bg-slate-200 text-slate-800 hover:bg-slate-800 hover:text-slate-200'
 		}
 	];
 </script>
@@ -22,7 +31,7 @@
 </svelte:head>
 
 <section
-	class="flex h-full min-h-[85vh] max-w-[54rem] flex-col items-center justify-center gap-y-4 mx-auto"
+	class="mx-auto flex h-full min-h-[85vh] max-w-[54rem] flex-col items-center justify-center gap-y-4"
 >
 	<span
 		class="text-foreground font-display-2 relative self-start text-xl leading-loose font-bold sm:text-2xl"
@@ -39,18 +48,25 @@
 		with 5+ years of experience in the professional industry
 		<br /> Based in Bandung, Indonesia 🇮🇩
 	</p>
+	<div class="flex w-full flex-col items-center justify-center gap-x-4 gap-y-2 md:flex-row">
+		{#each menu as { title, href, disabled }, i}
+			{#if disabled}
+				<span
+					class="brutalist-border rounded-md px-2 py-1 transition-colors {menu[i]
+						.classNames} cursor-not-allowed opacity-50"
+				>
+					{title}</span
+				>
+			{:else}
+				<a
+					{href}
+					class="brutalist-border rounded-md px-2 py-1 transition-colors {menu[i].classNames}"
+				>
+					{title}</a
+				>
+			{/if}
+		{/each}
+	</div>
+	<h3 class="h3 text-black">Contact me:</h3>
 	<Contact />
-	<div class="flex w-full flex-col items-center justify-center space-y-2"></div>
-	{#each menu as { title, href }}
-		<!-- <a {href} class="btn preset-tonal"> {title} </a> -->
-		<a
-			{href}
-			class="text-tertiary-contrast-900-100 bg-tertiary-900-100 hover:text-tertiary-900 brutalist-border rounded-lg px-2 py-1 transition-colors"
-		>
-			{title}</a
-		>
-	{/each}
 </section>
-
-<style>
-</style>
