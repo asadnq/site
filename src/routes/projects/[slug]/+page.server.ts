@@ -1,9 +1,15 @@
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import { marked } from 'marked';
-import { getProjectBySlug } from '../utils';
+import { getAllProjects, getProjectBySlug } from '../utils';
 
 export const prerender = true;
+
+export const entries: EntryGenerator = () => {
+	return getAllProjects().map((project) => ({
+		slug: project.slug
+	}));
+};
 
 export const load: PageServerLoad = async ({ params }) => {
 	const project = getProjectBySlug(params.slug);

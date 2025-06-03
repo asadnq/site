@@ -1,7 +1,7 @@
 import { type ProjectEntry, projectEntrySchema } from '$lib/schemas/content';
 import matter from 'gray-matter';
 
-const files = import.meta.glob('/src/content/projects/*.md', {
+const files = import.meta.glob('../../content/projects/*.md', {
 	as: 'raw',
 	eager: true
 });
