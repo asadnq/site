@@ -1,0 +1,355 @@
+@import 'tailwindcss';
+@import '@fontsource/fira-mono';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/cerberus';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@theme {
+	--font-sans: 'Alegreya Sans', sans-serif;
+	--font-display: 'Farro', sans-serif;
+	--font-display-2: 'Kalam', sans-serif;
+
+	--color-deep-sea-green-50: oklch(96.43% 0.032 182.94);
+	--color-deep-sea-green-100: oklch(91.33% 0.077 185.27);
+	--color-deep-sea-green-200: oklch(84.19% 0.136 186.71);
+	--color-deep-sea-green-300: oklch(75.53% 0.193 186.28);
+	--color-deep-sea-green-400: oklch(69.88% 0.217 183.67);
+	--color-deep-sea-green-500: oklch(64.2% 0.192 181.79);
+	--color-deep-sea-green-600: oklch(54.68% 0.156 184.6);
+	--color-deep-sea-green-700: oklch(45.89% 0.122 189.08);
+	--color-deep-sea-green-800: oklch(38.95% 0.102 191.2);
+	--color-deep-sea-green-900: oklch(30.72% 0.086 190.99);
+	--color-deep-sea-green-950: oklch(22.48% 0.073 194.22);
+
+	--color-azure-50: oklch(95.74% 0.035 248.23);
+	--color-azure-100: oklch(92.48% 0.042 248.88);
+	--color-azure-200: oklch(86.82% 0.064 252.02);
+	--color-azure-300: oklch(78.7% 0.108 254.04);
+	--color-azure-400: oklch(69.91% 0.164 258.11);
+	--color-azure-500: oklch(64.27% 0.221 259.68);
+	--color-azure-600: oklch(55.52% 0.259 259.17);
+	--color-azure-700: oklch(48.75% 0.221 260.26);
+	--color-azure-800: oklch(43.47% 0.19 260.96);
+	--color-azure-900: oklch(38.73% 0.157 260.95);
+	--color-azure-950: oklch(17.32% 0.027 259.43);
+
+	--color-crimson-50: oklch(96.69% 0.03 17.11);
+	--color-crimson-100: oklch(93.37% 0.05 18.06);
+	--color-crimson-200: oklch(88.12% 0.078 18.62);
+	--color-crimson-300: oklch(79.6% 0.127 18.96);
+	--color-crimson-400: oklch(68.63% 0.198 19.39);
+	--color-crimson-500: oklch(61.3% 0.247 20.23);
+	--color-crimson-600: oklch(59.15% 0.278 22.86); /* #ed1a2e */
+	--color-crimson-700: oklch(50.15% 0.253 22.49);
+	--color-crimson-800: oklch(43.22% 0.215 22.6);
+	--color-crimson-900: oklch(37.48% 0.179 23.16);
+	--color-crimson-950: oklch(19.73% 0.101 23.62);
+}
+
+@layer theme {
+	.text-gradient {
+		background-image: linear-gradient(
+			to right,
+			var(--color-primary-500),
+			var(--color-secondary-900)
+		);
+		background-clip: text;
+		color: transparent;
+	}
+
+	.brutalist-border {
+		@apply border-4 border-black shadow-[5px_5px_0_0_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px];
+	}
+
+	.brutalist-shadow-xl {
+		@apply shadow-[10px_10px_0_0_rgba(0,0,0,1)];
+	}
+
+	.page-card-container {
+		@apply flex flex-col space-y-6 rounded-none border-x-0 border-y-4 border-black px-4 py-6 sm:mx-2 sm:rounded-xl sm:border-x-4;
+	}
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+[data-theme='custom'] {
+	--text-scaling: 1.067;
+	--base-font-color: var(--color-surface-950);
+	--base-font-color-dark: var(--color-surface-50);
+	--base-font-family: system-ui, sans-serif;
+	--base-font-size: inherit;
+	--base-line-height: inherit;
+	--base-font-weight: 600;
+	--base-font-style: normal;
+	--base-letter-spacing: 0em;
+	--heading-font-color: inherit;
+	--heading-font-color-dark: inherit;
+	--heading-font-family: inherit;
+	--heading-font-weight: bold;
+	--heading-font-style: normal;
+	--heading-letter-spacing: inherit;
+	--anchor-font-color: var(--color-primary-500);
+	--anchor-font-color-dark: var(--color-primary-500);
+	--anchor-font-family: inherit;
+	--anchor-font-size: inherit;
+	--anchor-line-height: inherit;
+	--anchor-font-weight: inherit;
+	--anchor-font-style: inherit;
+	--anchor-letter-spacing: inherit;
+	--anchor-text-decoration: none;
+	--anchor-text-decoration-hover: underline;
+	--anchor-text-decoration-active: none;
+	--anchor-text-decoration-focus: none;
+	--spacing: 0.28rem;
+	--radius-base: 0.375rem;
+	--radius-container: 0.75rem;
+	--default-border-width: 1px;
+	--default-divide-width: 1px;
+	--default-ring-width: 1px;
+	--body-background-color: var(--color-surface-500);
+	--body-background-color-dark: var(--color-surface-950);
+	--color-primary-50: oklch(96.23% 0.037 252.97);
+	--color-primary-100: oklch(93.14% 0.056 253.72);
+	--color-primary-200: oklch(87.08% 0.097 255.32);
+	--color-primary-300: oklch(76.28% 0.167 257.03);
+	--color-primary-400: oklch(63.64% 0.244 257.54);
+	--color-primary-500: oklch(56.36% 0.252 256.47);
+	--color-primary-600: oklch(48.22% 0.207 254.84);
+	--color-primary-700: oklch(41.69% 0.175 254.4);
+	--color-primary-800: oklch(37.09% 0.148 254.47);
+	--color-primary-900: oklch(33.83% 0.132 254.52);
+	--color-primary-950: oklch(23.5% 0.094 253.54);
+	--color-primary-contrast-dark: var(--color-primary-950);
+	--color-primary-contrast-light: var(--color-primary-50);
+	--color-primary-contrast-50: var(--color-primary-contrast-dark);
+	--color-primary-contrast-100: var(--color-primary-contrast-dark);
+	--color-primary-contrast-200: var(--color-primary-contrast-dark);
+	--color-primary-contrast-300: var(--color-primary-contrast-dark);
+	--color-primary-contrast-400: var(--color-primary-contrast-dark);
+	--color-primary-contrast-500: var(--color-primary-contrast-dark);
+	--color-primary-contrast-600: var(--color-primary-contrast-dark);
+	--color-primary-contrast-700: var(--color-primary-contrast-dark);
+	--color-primary-contrast-800: var(--color-primary-contrast-dark);
+	--color-primary-contrast-900: var(--color-primary-contrast-dark);
+	--color-primary-contrast-950: var(--color-primary-contrast-light);
+	--color-secondary-50: oklch(100% 0 none);
+	--color-secondary-100: oklch(94.66% 0.03 307.12deg);
+	--color-secondary-200: oklch(89.51% 0.05 306.11deg);
+	--color-secondary-300: oklch(84.1% 0.08 305.05deg);
+	--color-secondary-400: oklch(78.99% 0.11 304.48deg);
+	--color-secondary-500: oklch(73.77% 0.14 304.04deg);
+	--color-secondary-600: oklch(66.43% 0.14 303.42deg);
+	--color-secondary-700: oklch(58.97% 0.14 302.39deg);
+	--color-secondary-800: oklch(50.99% 0.13 301.09deg);
+	--color-secondary-900: oklch(43.13% 0.13 299.4deg);
+	--color-secondary-950: oklch(35.02% 0.13 297.24deg);
+	--color-secondary-contrast-dark: var(--color-secondary-950);
+	--color-secondary-contrast-light: var(--color-secondary-50);
+	--color-secondary-contrast-50: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-100: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-200: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-300: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-400: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-500: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-600: var(--color-secondary-contrast-dark);
+	--color-secondary-contrast-700: var(--color-secondary-contrast-light);
+	--color-secondary-contrast-800: var(--color-secondary-contrast-light);
+	--color-secondary-contrast-900: var(--color-secondary-contrast-light);
+	--color-secondary-contrast-950: var(--color-secondary-contrast-light);
+	--color-tertiary-50: oklch(98.86% 0.06 107.41deg);
+	--color-tertiary-100: oklch(96.73% 0.09 114.77deg);
+	--color-tertiary-200: oklch(94.62% 0.12 119.27deg);
+	--color-tertiary-300: oklch(92.66% 0.14 121.76deg);
+	--color-tertiary-400: oklch(90.74% 0.17 124.08deg);
+	--color-tertiary-500: oklch(88.96% 0.19 125.72deg);
+	--color-tertiary-600: oklch(81.44% 0.18 127.09deg);
+	--color-tertiary-700: oklch(74.07% 0.18 128.56deg);
+	--color-tertiary-800: oklch(66.23% 0.17 130.29deg);
+	--color-tertiary-900: oklch(58.53% 0.16 132.28deg);
+	--color-tertiary-950: oklch(50.32% 0.15 134.68deg);
+	--color-tertiary-contrast-dark: var(--color-tertiary-950);
+	--color-tertiary-contrast-light: var(--color-tertiary-50);
+	--color-tertiary-contrast-50: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-100: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-200: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-300: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-400: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-500: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-600: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-700: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-800: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-900: var(--color-tertiary-contrast-light);
+	--color-tertiary-contrast-950: var(--color-tertiary-contrast-light);
+	--color-success-50: oklch(94.05% 0.09 178.66deg);
+	--color-success-100: oklch(91.62% 0.1 178.6deg);
+	--color-success-200: oklch(89.44% 0.11 177.16deg);
+	--color-success-300: oklch(87.13% 0.12 176.9deg);
+	--color-success-400: oklch(85.09% 0.13 175.45deg);
+	--color-success-500: oklch(82.91% 0.13 174.95deg);
+	--color-success-600: oklch(72.85% 0.12 175.7deg);
+	--color-success-700: oklch(62.4% 0.1 175.99deg);
+	--color-success-800: oklch(51.26% 0.08 178.28deg);
+	--color-success-900: oklch(39.72% 0.06 179.74deg);
+	--color-success-950: oklch(27.27% 0.04 185.29deg);
+	--color-success-contrast-dark: var(--color-success-950);
+	--color-success-contrast-light: var(--color-success-50);
+	--color-success-contrast-50: var(--color-success-contrast-dark);
+	--color-success-contrast-100: var(--color-success-contrast-dark);
+	--color-success-contrast-200: var(--color-success-contrast-dark);
+	--color-success-contrast-300: var(--color-success-contrast-dark);
+	--color-success-contrast-400: var(--color-success-contrast-dark);
+	--color-success-contrast-500: var(--color-success-contrast-dark);
+	--color-success-contrast-600: var(--color-success-contrast-light);
+	--color-success-contrast-700: var(--color-success-contrast-light);
+	--color-success-contrast-800: var(--color-success-contrast-light);
+	--color-success-contrast-900: var(--color-success-contrast-light);
+	--color-success-contrast-950: var(--color-success-contrast-light);
+	--color-warning-50: oklch(95.67% 0.05 84.56deg);
+	--color-warning-100: oklch(92.83% 0.06 82.16deg);
+	--color-warning-200: oklch(90.12% 0.08 80.33deg);
+	--color-warning-300: oklch(87.59% 0.1 80.01deg);
+	--color-warning-400: oklch(85.03% 0.12 78.35deg);
+	--color-warning-500: oklch(82.46% 0.14 76.71deg);
+	--color-warning-600: oklch(76.34% 0.13 72.25deg);
+	--color-warning-700: oklch(70.34% 0.13 68.09deg);
+	--color-warning-800: oklch(63.99% 0.13 63.18deg);
+	--color-warning-900: oklch(57.91% 0.13 57.97deg);
+	--color-warning-950: oklch(51.69% 0.13 51.44deg);
+	--color-warning-contrast-dark: var(--color-warning-950);
+	--color-warning-contrast-light: var(--color-warning-50);
+	--color-warning-contrast-50: var(--color-warning-contrast-dark);
+	--color-warning-contrast-100: var(--color-warning-contrast-dark);
+	--color-warning-contrast-200: var(--color-warning-contrast-dark);
+	--color-warning-contrast-300: var(--color-warning-contrast-dark);
+	--color-warning-contrast-400: var(--color-warning-contrast-dark);
+	--color-warning-contrast-500: var(--color-warning-contrast-dark);
+	--color-warning-contrast-600: var(--color-warning-contrast-light);
+	--color-warning-contrast-700: var(--color-warning-contrast-light);
+	--color-warning-contrast-800: var(--color-warning-contrast-light);
+	--color-warning-contrast-900: var(--color-warning-contrast-light);
+	--color-warning-contrast-950: var(--color-warning-contrast-light);
+	--color-error-50: oklch(89.99% 0.04 14.04deg);
+	--color-error-100: oklch(83.49% 0.07 19.81deg);
+	--color-error-200: oklch(77.4% 0.11 21.98deg);
+	--color-error-300: oklch(72.13% 0.15 24.9deg);
+	--color-error-400: oklch(67.39% 0.19 26.71deg);
+	--color-error-500: oklch(63.72% 0.22 28.71deg);
+	--color-error-600: oklch(59.28% 0.21 28.53deg);
+	--color-error-700: oklch(54.92% 0.2 28.58deg);
+	--color-error-800: oklch(50.51% 0.19 28.72deg);
+	--color-error-900: oklch(46.22% 0.18 28.88deg);
+	--color-error-950: oklch(41.86% 0.17 29.23deg);
+	--color-error-contrast-dark: var(--color-error-950);
+	--color-error-contrast-light: var(--color-error-50);
+	--color-error-contrast-50: var(--color-error-contrast-dark);
+	--color-error-contrast-100: var(--color-error-contrast-dark);
+	--color-error-contrast-200: var(--color-error-contrast-dark);
+	--color-error-contrast-300: var(--color-error-contrast-dark);
+	--color-error-contrast-400: var(--color-error-contrast-dark);
+	--color-error-contrast-500: var(--color-error-contrast-light);
+	--color-error-contrast-600: var(--color-error-contrast-light);
+	--color-error-contrast-700: var(--color-error-contrast-light);
+	--color-error-contrast-800: var(--color-error-contrast-light);
+	--color-error-contrast-900: var(--color-error-contrast-light);
+	--color-error-contrast-950: var(--color-error-contrast-light);
+	--color-surface-50: oklch(100% 0 none);
+	--color-surface-50: oklch(97.19% 0.002 267.47);
+	--color-surface-100: oklch(94.98% 0.003 267.29);
+	--color-surface-200: oklch(88.43% 0.004 267.66);
+	--color-surface-300: oklch(77.62% 0.006 267.73);
+	--color-surface-400: oklch(64.9% 0.009 267.63);
+	--color-surface-500: oklch(56.26% 0.01 267.6);
+	--color-surface-600: oklch(49.25% 0.009 267.61);
+	--color-surface-700: oklch(42.84% 0.008 267.6);
+	--color-surface-800: oklch(39.04% 0.007 267.58);
+	--color-surface-900: oklch(36.17% 0.006 267.58);
+	--color-surface-950: oklch(28.51% 0.004 267.61);
+	--color-surface-contrast-dark: var(--color-surface-950);
+	--color-surface-contrast-light: oklch(0% 0 0deg);
+	--color-surface-contrast-50: var(--color-surface-contrast-dark);
+	--color-surface-contrast-100: var(--color-surface-contrast-dark);
+	--color-surface-contrast-200: var(--color-surface-contrast-dark);
+	--color-surface-contrast-300: var(--color-surface-contrast-dark);
+	--color-surface-contrast-400: var(--color-surface-contrast-dark);
+	--color-surface-contrast-500: var(--color-surface-contrast-dark);
+	--color-surface-contrast-600: var(--color-surface-contrast-dark);
+	--color-surface-contrast-700: var(--color-surface-contrast-dark);
+	--color-surface-contrast-800: var(--color-surface-contrast-light);
+	--color-surface-contrast-900: var(--color-surface-contrast-light);
+	--color-surface-contrast-950: var(--color-surface-contrast-light);
+}
+
+/* Create a custom preset in your global stylesheet */
+.preset-gradient-one {
+	background-image: linear-gradient(to right, var(--color-primary-900), var(--color-primary-200));
+	color: var(--color-primary-contrast-500);
+}
+.preset-gradient-two {
+	background-image: linear-gradient(to right, var(--color-surface-700), var(--color-surface-900));
+	color: var(--color-error-contrast-500);
+}
+.preset-gradient-three {
+	background-image: linear-gradient(45deg, var(--color-success-500), var(--color-warning-500));
+	color: var(--color-success-contrast-500);
+}
+
+.preset-glass-neutral {
+	background: color-mix(in oklab, var(--color-surface-50-950) 30%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-surface-50-950) 30%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+/* --- */
+.preset-glass-primary {
+	background: color-mix(in oklab, var(--color-primary-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-primary-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+.preset-glass-secondary {
+	background: color-mix(in oklab, var(--color-secondary-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-secondary-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+.preset-glass-tertiary {
+	background: color-mix(in oklab, var(--color-tertiary-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-tertiary-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+.preset-glass-success {
+	background: color-mix(in oklab, var(--color-success-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-success-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+.preset-glass-warning {
+	background: color-mix(in oklab, var(--color-warning-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-warning-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+.preset-glass-error {
+	background: color-mix(in oklab, var(--color-error-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-error-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}
+.preset-glass-surface {
+	background: color-mix(in oklab, var(--color-surface-500) 40%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-surface-500) 50%, transparent) inset;
+	backdrop-filter: blur(16px);
+}

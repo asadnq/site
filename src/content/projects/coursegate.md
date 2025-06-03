@@ -4,6 +4,7 @@ description: 'Developed a browser extension that helps users with dietary prefer
 techStackIds: ['flutter', 'firebase', 'reactive-x']
 relatedCompanies: ['cofoundery']
 startDate: '2020-01-04'
+color: purple
 ---
 
 ## overview

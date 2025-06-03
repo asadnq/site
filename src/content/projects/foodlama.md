@@ -13,6 +13,7 @@ techStackIds:
   ]
 relatedCompanies: ['foodlama', 'cloud-thought']
 startDate: '2021-06-01'
+color: deep-sea-green 
 ---
 
 ## Overview

@@ -4,6 +4,7 @@ description: 'Developed a new mobile app for Spacetoon Go, enhancing UI/UX, perf
 techStackIds: ['flutter', 'graphql', 'melos', 'rudderstack']
 relatedCompanies: ['spacetoon-go', 'cofoundery']
 startDate: '2024-09-01'
+color: azure
 ---
 
 ## Overview

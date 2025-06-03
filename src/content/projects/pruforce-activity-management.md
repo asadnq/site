@@ -4,6 +4,7 @@ description: 'Developed a PRUForce module that facilitates insurance agent to ma
 techStackIds: ['react', 'redux', 'redux-saga']
 relatedCompanies: ['prudential', 'barito-bit']
 startDate: '2019-06-19'
+color: crimson
 ---
 
 ## Overview
