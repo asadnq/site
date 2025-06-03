@@ -52,7 +52,7 @@
 		<a
 			{href}
 			style="transform: scale({scales[i].current}); opacity: {opacities[i].current}"
-			class="brutalist-border {iconContainerClassNames[id]} rounded-md p-2"
+			class="brutalist-border border-2 border-black {iconContainerClassNames[id]} rounded-md p-1"
 		>
 			<Icon width={iconSize} height={iconSize} />
 		</a>

@@ -4,6 +4,7 @@ description: 'Migrated 7.5m users from the old database to the new database, ens
 techStackIds: ['ts', 'node-js', 'postgres', 'airflow', 'python']
 relatedCompanies: ['spacetoon-go', 'cofoundery']
 startDate: '2023-04-01'
+color: azure
 ---
 
 ## Overview

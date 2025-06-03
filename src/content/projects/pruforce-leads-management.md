@@ -4,6 +4,7 @@ description: 'Enhanced PRUForce with a leads management module to streamline pro
 techStackIds: ['react', 'redux', 'redux-saga']
 relatedCompanies: ['prudential', 'barito-bit']
 startDate: '2019-06-19'
+color: crimson
 ---
 
 ## Overview

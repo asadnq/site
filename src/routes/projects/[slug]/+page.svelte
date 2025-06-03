@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SectionCard from '$lib/components/SectionCard.svelte';
+	import { cn, projectColors } from '$lib/utils/ui';
 	import type { PageProps } from './$types';
 
 	let data: PageProps = $props();
@@ -9,12 +11,12 @@
 	<title>{project.title} | My Projects</title>
 </svelte:head>
 
-<article class="mx-0 max-w-4xl px-2 py-8 sm:mx-auto sm:px-4 sm:py-12">
-	<h1 class="text-primary-800 text-4xl font-extrabold tracking-tight">
+<SectionCard className={projectColors[project.color]}>
+	<h1 class="text-4xl font-extrabold tracking-tight text-black">
 		{project.title}
 	</h1>
 
-	<p class="text-surface-50-950 text-sm font-bold">
+	<p class="text-base font-bold">
 		{new Date(project.startDate).toLocaleDateString()}
 	</p>
 
@@ -29,9 +31,8 @@
 	{/if}
 
 	<div>
-		<div class="prose prose-slate max-w-none">
+		<div class={cn('prose prose-slate max-w-none', projectColors[project.color])}>
 			{@html project.content}
 		</div>
 	</div>
-	<!-- </div> -->
-</article>
+</SectionCard>

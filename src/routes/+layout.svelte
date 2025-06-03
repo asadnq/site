@@ -20,11 +20,7 @@
 			</button>
 		{/if}
 		<a href="/">
-			<span
-				class="font-display text-2xl font-extrabold"
-				class:text-black={isRoot}
-				class:text-primary-800={!isRoot}
-			>
+			<span class="font-display text-primary-800 text-2xl font-extrabold" class:underline={!isRoot}>
 				asadnq.dev</span
 			>
 		</a>
@@ -34,7 +30,8 @@
 	</main>
 
 	<footer
-		class="bg-secondary-100-900 text-tertiary-contrast-100-900 flex flex-col items-center justify-center p-3 sm:p-4 mt-4"
+		class="bg-secondary-100-900 text-tertiary-contrast-100-900 mt-0 flex flex-col items-center justify-center border-black p-3 sm:mt-4 sm:p-4"
+		class:border-t-4={isRoot}
 	>
 		<p>&copy; {today.getFullYear()} Asadnq. All rights reserved</p>
 		<p>

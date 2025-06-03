@@ -5,6 +5,7 @@ techStackIds:
   ['react', 'ts', 'tailwind-css', 'next-js', 'rudderstack', 'turbo-repo']
 relatedCompanies: ['spacetoon-go', 'cofoundery']
 startDate: '2025-01-01'
+color: azure
 ---
 
 ## Overview

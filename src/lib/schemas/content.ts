@@ -1,5 +1,6 @@
 // src/content/schemas/blog.ts
 import { z } from 'zod';
+import { projectColorSchema } from './color';
 
 export const projectSchema = z.object({
 	title: z
@@ -59,7 +60,8 @@ export const projectEntrySchema = projectSchema.extend({
 			invalid_type_error: 'Slug must be a string.'
 		})
 		.describe('A URL-friendly unique identifier for the project.'),
-	content: z.string().describe('The content of the project.')
+	content: z.string().describe('The content of the project.'),
+	color: projectColorSchema.default('indigo')
 });
 
 export type ProjectEntry = z.infer<typeof projectEntrySchema>;

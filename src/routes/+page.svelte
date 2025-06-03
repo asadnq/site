@@ -38,11 +38,11 @@
 	>
 		👋 Hi there,
 	</span>
-	<h1 class="text-6xl sm:text-9xl">
+	<h1 class="rounded-lg p-2 text-6xl sm:text-9xl">
 		<span class="font-thin text-black">I'm</span>{' '}
-		<span class="font-display text-primary-800">Asad</span>
+		<span class="font-display text-primary-200-800">Asad</span>
 	</h1>
-	<p class="font-regular relative text-center text-sm sm:text-xl">
+	<p class="relative text-center text-sm font-medium sm:text-xl">
 		A{' '}
 		<span class="text-secondary-900 font-bold"> full-stack developer </span>{' '}
 		with 5+ years of experience in the professional industry
@@ -53,14 +53,16 @@
 			{#if disabled}
 				<span
 					class="brutalist-border rounded-md px-2 py-1 transition-colors {menu[i]
-						.classNames} cursor-not-allowed opacity-50"
+						.classNames} cursor-not-allowed border-2 border-black opacity-50"
 				>
 					{title}</span
 				>
 			{:else}
 				<a
 					{href}
-					class="brutalist-border rounded-md px-2 py-1 transition-colors {menu[i].classNames}"
+					class="brutalist-border rounded-md border-2 border-black px-2 py-1 transition-colors {menu[
+						i
+					].classNames}"
 				>
 					{title}</a
 				>
