@@ -1,11 +1,49 @@
 <script lang="ts">
-	import ExperienceTimeline from './ExperienceTimeline.svelte';
 	import { WORK_EXPERIENCES } from './data';
-	import { page } from '$app/state';
-	const isRoot = $derived(page.url.pathname !== '/');
+	import type { Experience } from '$lib/schemas';
+	import { getDurationString } from '$lib/utils/misc';
+	import SectionCard from '$lib/components/SectionCard.svelte';
+	import ExperienceItem from './ExperienceItem.svelte';
+
+	const experiences: Experience[] = WORK_EXPERIENCES;
+
+	const dateFormatter = new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'short'
+	});
+
+	const formatDateRange = (start: Date, end: Date | undefined, status: Experience['status']) => {
+		const startStr = dateFormatter.format(new Date(start));
+		const endStr = status === 'completed' && end ? dateFormatter.format(new Date(end)) : 'Now';
+		return `${startStr} – ${endStr}`;
+	};
 </script>
 
-<section class="flex flex-col space-y-12">
-	<h2 class="h2 font-sans" class:text-white={isRoot} class:text-primary={!isRoot}>Experience</h2>
-	<ExperienceTimeline experiences={WORK_EXPERIENCES} />
-</section>
+<SectionCard className="bg-emerald-200 text-emerald-800">
+	<h2 class="h2 font-sans font-black text-black">Experience</h2>
+	{#each experiences as exp, i}
+		<div class="grid grid-cols-[1fr] gap-x-4 md:grid-cols-[200px_15px_1fr] md:grid-rows-1">
+			<!-- Date (only on md and up) -->
+			<div class="hidden flex-col items-end pr-2 text-right md:flex">
+				<span class="text-sm font-semibold">
+					{formatDateRange(exp.dateStart, exp.dateEnd, exp.status)}
+				</span>
+				<span class="text-emerelad-800 text-xs font-medium">
+					{getDurationString(exp.dateStart, exp.dateEnd)}
+				</span>
+			</div>
+
+			<div class="relative hidden flex-col items-center md:flex">
+				<div class="z-10 size-4 rounded-full bg-emerald-800"></div>
+				{#if i < experiences.length - 1}
+					<div
+						class="absolute top-4 left-2 h-[calc(100%+3rem)] w-px bg-emerald-800 md:left-[50%]"
+					></div>
+				{/if}
+			</div>
+
+			<!-- Content -->
+			<ExperienceItem {exp} />
+		</div>
+	{/each}
+</SectionCard>

@@ -1,3 +1,5 @@
+import type { Experience } from '$lib/schemas';
+
 export function getDurationString(start: Date, end?: Date): string {
 	const d1 = new Date(start);
 	const d2 = end ? new Date(end) : new Date();
@@ -12,3 +14,18 @@ export function getDurationString(start: Date, end?: Date): string {
 		result += `${years ? ' ' : ''}${remainingMonths} mo${remainingMonths > 1 ? 's' : ''}`;
 	return result || 'Less than a month';
 }
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+	year: 'numeric',
+	month: 'short'
+});
+
+export const formatDateRange = (
+	start: Date,
+	end: Date | undefined,
+	status: Experience['status']
+) => {
+	const startStr = dateFormatter.format(new Date(start));
+	const endStr = status === 'completed' && end ? dateFormatter.format(new Date(end)) : 'Now';
+	return `${startStr} – ${endStr}`;
+};

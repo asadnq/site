@@ -1,11 +1,12 @@
 <script lang="ts">
+	import SectionCard from '$lib/components/SectionCard.svelte';
 	import { fly, scale, fade } from 'svelte/transition';
 </script>
 
-<section
-	class="border-4 border-black brutalist-shadow-xl grid grid-cols-3 gap-4 rounded-2xl bg-lime-200 p-2 text-lime-800 sm:p-6 font-medium"
+<SectionCard
+	className="grid grid-cols-3 gap-4 bg-lime-200 font-medium text-lime-800"
 >
-	<div class="col-span-2 flex flex-col space-y-4 text-lg sm:row-start-1">
+	<div class="col-span-2 flex flex-col space-y-4 text-lg font-black sm:row-start-1">
 		<h2 in:fly={{ y: 25, opacity: 0, duration: 400 }} class="text-3xl font-black text-black">
 			Hi, I'm Asad! A full-stack developer based in Bandung, Indonesia 🇮🇩
 		</h2>
@@ -43,4 +44,4 @@
 			in:scale={{ start: 2, duration: 500 }}
 		/>
 	</div>
-</section>
+</SectionCard>

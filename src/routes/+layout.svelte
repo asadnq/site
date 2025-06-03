@@ -29,7 +29,7 @@
 			>
 		</a>
 	</header>
-	<main class="mx-auto my-0 box-border flex w-full max-w-5xl flex-1 flex-col p-2">
+	<main class="mx-auto my-0 box-border flex w-full max-w-5xl flex-1 flex-col">
 		{@render children()}
 	</main>
 
