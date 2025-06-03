@@ -24,7 +24,7 @@
 
 	<!-- Responsibilities -->
 	<div class="flex flex-col gap-y-2">
-		<h4 class="text-emerelad-900 text-base font-bold">Responsibilities</h4>
+		<h4 class="text-emerald-950 text-base font-bold">Responsibilities</h4>
 		<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
 			{#each exp.responsibilities as responsibility}
 				<li>{responsibility}</li>
@@ -35,7 +35,7 @@
 	<!-- Tech Stack -->
 	{#if exp.techStack?.length}
 		<div class="flex flex-col gap-y-2">
-			<h4 class="text-emerelad-900 text-base font-bold">Tech Stack</h4>
+			<h4 class="text-emerald-950 text-base font-bold">Tech Stack</h4>
 			<div class="flex flex-wrap gap-2">
 				{#each exp.techStack as tech}
 					<span class="badge bg-indigo-200 px-2 py-1 text-sm text-indigo-800">{tech}</span>
@@ -47,7 +47,7 @@
 	<!-- Projects -->
 	{#if exp.projects?.length}
 		<div class="flex flex-col gap-y-2">
-			<h4 class="text-emerelad-900 text-base font-bold">Projects</h4>
+			<h4 class="text-emerald-950 text-base font-bold">Projects</h4>
 			<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
 				{#each exp.projects as project}
 					<li>{project}</li>

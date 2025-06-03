@@ -9,7 +9,7 @@
 	<title>{project.title} | My Projects</title>
 </svelte:head>
 
-<article class="mx-0 max-w-4xl px-0 py-8 sm:mx-auto sm:px-4 sm:py-12">
+<article class="mx-0 max-w-4xl px-2 py-8 sm:mx-auto sm:px-4 sm:py-12">
 	<h1 class="text-primary-800 text-4xl font-extrabold tracking-tight">
 		{project.title}
 	</h1>

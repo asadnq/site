@@ -4,10 +4,13 @@
 </script>
 
 <SectionCard
-	className="grid grid-cols-3 gap-4 bg-lime-200 font-medium text-lime-800"
+	className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-lime-200 font-medium text-lime-800"
 >
 	<div class="col-span-2 flex flex-col space-y-4 text-lg font-black sm:row-start-1">
-		<h2 in:fly={{ y: 25, opacity: 0, duration: 400 }} class="text-3xl font-black text-black">
+		<h2
+			in:fly={{ y: 25, opacity: 0, duration: 400 }}
+			class="text-2xl font-black text-black sm:text-3xl"
+		>
 			Hi, I'm Asad! A full-stack developer based in Bandung, Indonesia 🇮🇩
 		</h2>
 
@@ -36,11 +39,11 @@
 		</p>
 	</div>
 
-	<div class="flex items-start justify-center sm:items-center">
+	<div class="row-start-1 flex items-start justify-center sm:items-center">
 		<img
 			src="/whats-this.png"
 			alt="Illustration"
-			class="w-64 rounded-full border-4 border-black shadow-[6px_6px_0_0_black] sm:w-80"
+			class="brutalist-shadow-xl size-32 sm:size-48 rounded-3xl"
 			in:scale={{ start: 2, duration: 500 }}
 		/>
 	</div>

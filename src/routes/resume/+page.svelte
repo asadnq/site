@@ -22,7 +22,9 @@
 <SectionCard className="bg-emerald-200 text-emerald-800">
 	<h2 class="h2 font-sans font-black text-black">Experience</h2>
 	{#each experiences as exp, i}
-		<div class="grid grid-cols-[1fr] gap-x-4 md:grid-cols-[200px_15px_1fr] md:grid-rows-1">
+		<div
+			class="grid grid-cols-[1fr] gap-x-4 border-b-2 border-black pb-4 sm:border-b-0 sm:pb-0 md:grid-cols-[200px_15px_1fr] md:grid-rows-1"
+		>
 			<!-- Date (only on md and up) -->
 			<div class="hidden flex-col items-end pr-2 text-right md:flex">
 				<span class="text-sm font-semibold">
@@ -34,11 +36,11 @@
 			</div>
 
 			<div class="relative hidden flex-col items-center md:flex">
-				<div class="z-10 size-4 rounded-full bg-emerald-800"></div>
+				<div class="z-10 size-4 rounded-full bg-emerald-900"></div>
 				{#if i < experiences.length - 1}
-					<div
-						class="absolute top-4 left-2 h-[calc(100%+3rem)] w-px bg-emerald-800 md:left-[50%]"
-					></div>
+				<div
+					class="absolute top-3 h-[calc(100%+1rem)] w-[3px] bg-emerald-900 md:left-[calc(50%-1px)]"
+				></div>
 				{/if}
 			</div>
 
