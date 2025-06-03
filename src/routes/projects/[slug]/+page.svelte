@@ -23,7 +23,7 @@
 	{#if project.techStackIds?.length}
 		<div class="flex flex-wrap gap-2">
 			{#each project.techStackIds as tag}
-				<span class="bg-primary-800 brutalist-border rounded-md px-2 py-1 text-sm text-black"
+				<span class="bg-primary-200-800 brutalist-border rounded-md px-2 py-1 text-sm text-primary-800-200 border-2 border-black"
 					>{tag}</span
 				>
 			{/each}
