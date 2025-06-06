@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="mx-auto grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-		{#each data.projects as project (project.slug)}
+		{#each data.projects.sort((a, b) => b.startDate.getTime() - a.startDate.getTime()) as project}
 			<ProjectCard {...project} />
 		{/each}
 	</div>
