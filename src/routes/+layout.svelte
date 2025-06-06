@@ -14,13 +14,18 @@
 
 <div class="flex min-h-screen flex-col">
 	<header class="flex flex-row items-center gap-x-2 px-5 py-6">
-		{#if !isRoot}
+		<!-- {#if !isRoot}
 			<button class="btn-icon transition" style="transform: scale({scaleTimeFn})">
 				<ArrowLeftIcon width={24} height={24} />
 			</button>
-		{/if}
+		{/if} -->
 		<a href="/">
-			<span class="font-display text-primary-800 text-2xl font-extrabold" class:underline={!isRoot}>
+			<span
+				class="font-display text-2xl font-black duration-300 transition-all"
+				class:text-foreground={isRoot}
+				class:text-primary-200-800={!isRoot}
+				class:underline={!isRoot}
+			>
 				asadnq.dev</span
 			>
 		</a>

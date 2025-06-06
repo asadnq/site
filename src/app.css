@@ -13,6 +13,8 @@
 	--font-display: 'Farro', sans-serif;
 	--font-display-2: 'Kalam', sans-serif;
 
+	--color-foreground: oklch(0% 0 0deg);
+
 	--color-deep-sea-green-50: oklch(96.43% 0.032 182.94);
 	--color-deep-sea-green-100: oklch(91.33% 0.077 185.27);
 	--color-deep-sea-green-200: oklch(84.19% 0.136 186.71);
@@ -67,10 +69,6 @@
 
 	.brutalist-shadow-xl {
 		@apply shadow-[10px_10px_0_0_rgba(0,0,0,1)];
-	}
-
-	.page-card-container {
-		@apply flex flex-col space-y-6 rounded-none border-x-0 border-y-4 border-black px-4 py-6 sm:mx-2 sm:rounded-xl sm:border-x-4;
 	}
 }
 

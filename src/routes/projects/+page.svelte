@@ -8,7 +8,7 @@
 	let { data }: PageProps = $props();
 </script>
 
-<SectionCard className="page-card-container bg-sky-200">
+<SectionCard className="bg-sky-200">
 	<div class="flex flex-col space-y-2">
 		<h2 class="h2 font-sans text-black">Projects</h2>
 		<p class="font-medium text-sky-800">Here are some of the projects I've worked on.</p>
