@@ -87,7 +87,24 @@
 }
 
 body {
+	background-image:
+		linear-gradient(
+			to right,
+			color-mix(in oklch, var(--color-primary-200-800) 25%, transparent) 1px,
+			transparent 1px
+		),
+		linear-gradient(
+			to bottom,
+			color-mix(in oklch, var(--color-primary-200-800) 25%, transparent) 1px,
+			transparent 1px
+		);
+	background-size: 16vw 16vw;
+	@media (width >= 768px) {
+		background-size: 8vw 8vw;
+	}
 	min-height: 100vh;
+	background-color: var(--color-primary-800-200);
+	color: var(--color-foreground);
 	margin: 0;
 }
 
