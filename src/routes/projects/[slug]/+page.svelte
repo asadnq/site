@@ -1,9 +1,7 @@
 <script lang="ts">
 	import SectionCard from '$lib/components/SectionCard.svelte';
 	import { cn, projectColors } from '$lib/utils/ui';
-	import { ArrowLeftIcon } from '@lucide/svelte';
 	import type { PageProps } from './$types';
-	import BackButton from '$lib/components/BackButton.svelte';
 	import TechStackBadge from '$lib/components/TechStackBadge.svelte';
 
 	let data: PageProps = $props();

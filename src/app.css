@@ -9,8 +9,8 @@
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
 @theme {
-	--font-sans: 'Alegreya Sans', sans-serif;
-	--font-display: 'Farro', sans-serif;
+	--font-sans: 'Nunito Sans', sans-serif;
+	--font-display: 'Space Grotesk', sans-serif;
 	--font-display-2: 'Kalam', sans-serif;
 
 	--color-deep-sea-green-50: oklch(96.43% 0.032 182.94);
@@ -132,7 +132,7 @@ body {
 	--text-scaling: 1.067;
 	--base-font-color: var(--color-surface-950);
 	--base-font-color-dark: var(--color-surface-50);
-	--base-font-family: system-ui, sans-serif;
+	--base-font-family: var(--font-sans);
 	--base-font-size: inherit;
 	--base-line-height: inherit;
 	--base-font-weight: 600;
@@ -333,6 +333,10 @@ body {
 	--color-surface-contrast-800: var(--color-surface-contrast-light);
 	--color-surface-contrast-900: var(--color-surface-contrast-light);
 	--color-surface-contrast-950: var(--color-surface-contrast-light);
+}
+
+h1 {
+	@apply text-surface-950-50 font-display text-3xl font-black sm:text-5xl;
 }
 
 /* Create a custom preset in your global stylesheet */

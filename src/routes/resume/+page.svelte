@@ -19,8 +19,12 @@
 	};
 </script>
 
+<svelte:head>
+	<title>My Experiences</title>
+</svelte:head>
+
 <SectionCard className="bg-emerald-200 dark:bg-emerald-800 text-emerald-800 dark:text-emerald-200">
-	<h2 class="h2 text-surface-950-50 font-sans font-black">Experience</h2>
+	<h1>Experience</h1>
 	{#each experiences as exp, i}
 		<div
 			class="border-surface-950-50 grid grid-cols-[1fr] gap-x-4 border-b-2 pb-4 last:border-b-0 sm:border-b-0 sm:pb-0 md:grid-cols-[200px_15px_1fr] md:grid-rows-1"

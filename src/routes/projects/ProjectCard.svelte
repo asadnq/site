@@ -32,7 +32,7 @@
 
 		<!-- Title & Description -->
 		<div class="space-y-3">
-			<h2 class="text-surface-950-50 text-2xl font-extrabold">{title}</h2>
+			<h3 class="text-surface-950-50 text-2xl font-extrabold">{title}</h3>
 			<p class="line-clamp-3 text-sm font-medium overflow-ellipsis">{description}</p>
 		</div>
 

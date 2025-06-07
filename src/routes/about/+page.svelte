@@ -3,16 +3,16 @@
 	import { fly, scale } from 'svelte/transition';
 </script>
 
-<SectionCard className="bg-lime-200 dark:bg-lime-800 text-lime-800 dark:text-lime-200">
-	<div class="grid grid-cols-1 gap-4 font-medium sm:grid-cols-3">
-		<div class="col-span-2 flex flex-col space-y-4 text-lg font-black sm:row-start-1">
-			<h2
-				in:fly={{ y: 25, opacity: 0, duration: 400 }}
-				class="text-surface-950-50 text-2xl font-black sm:text-3xl"
-			>
-				Hi, I'm Asad! A full-stack developer based in Bandung, Indonesia 🇮🇩
-			</h2>
+<svelte:head>
+	<title>About Me</title>
+</svelte:head>
 
+<SectionCard className="bg-lime-200 dark:bg-lime-800 text-lime-800 dark:text-lime-200">
+	<h1 in:fly={{ y: 25, opacity: 0, duration: 400 }}>
+		Hi, I'm Asad! A full-stack developer based in Bandung, Indonesia 🇮🇩
+	</h1>
+	<div class="grid grid-cols-1 gap-4 font-normal sm:grid-cols-3">
+		<div class="col-span-2 flex flex-col space-y-4 text-lg sm:row-start-1">
 			<p in:fly={{ y: 25, opacity: 0, duration: 400, delay: 200 }}>
 				I'm an experienced full-stack with a proven background spanning over 5+ years, coupled with
 				valuable exposure to project and team management. My experience includes building and
@@ -27,7 +27,10 @@
 			<p in:fly={{ y: 25, opacity: 0, duration: 400, delay: 600 }}>
 				Outside of work, I'm also active in local communities. I frequently attend local book club
 				meetings and coordinate{' '}
-				<a href="https://www.instagram.com/soekabahasa" class="font-bold text-blue-700 dark:text-blue-300 underline">
+				<a
+					href="https://www.instagram.com/soekabahasa"
+					class="font-bold text-blue-700 underline dark:text-blue-300"
+				>
 					Soekabahasa
 				</a>, a foreign language conversation club, where I help organize events and improve member
 				experiences.
