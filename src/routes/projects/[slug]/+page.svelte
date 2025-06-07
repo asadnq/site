@@ -1,7 +1,10 @@
 <script lang="ts">
 	import SectionCard from '$lib/components/SectionCard.svelte';
 	import { cn, projectColors } from '$lib/utils/ui';
+	import { ArrowLeftIcon } from '@lucide/svelte';
 	import type { PageProps } from './$types';
+	import BackButton from '$lib/components/BackButton.svelte';
+	import TechStackBadge from '$lib/components/TechStackBadge.svelte';
 
 	let data: PageProps = $props();
 	const { project } = data.data;
@@ -23,9 +26,7 @@
 	{#if project.techStackIds?.length}
 		<div class="flex flex-wrap gap-2">
 			{#each project.techStackIds as tag}
-				<span class="bg-primary-200-800 brutalist-border rounded-md px-2 py-1 text-sm text-primary-800-200 border-2 border-black"
-					>{tag}</span
-				>
+				<TechStackBadge name={tag} />
 			{/each}
 		</div>
 	{/if}

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import TechStackBadge from '$lib/components/TechStackBadge.svelte';
 	import type { ProjectEntry } from '$lib/schemas/content';
 	import { cn, projectColors } from '$lib/utils/ui';
 
@@ -46,19 +47,11 @@
 			{#if techStackIds?.length}
 				<div class="flex flex-wrap gap-1 text-xs">
 					{#each techStackIds.slice(0, maxVisibleTechStacks) as tech}
-						<span
-							class="bg-surface-800-200 text-surface-200-800 rounded border-2 border-black px-2 py-0.5"
-						>
-							{tech}
-						</span>
+						<TechStackBadge name={tech} size="xs" />
 					{/each}
 
 					{#if remainingTechStacks > 0}
-						<span
-							class="bg-surface-800-200 text-surface-200-800 rounded border-2 border-black px-2 py-0.5"
-						>
-							+{remainingTechStacks}
-						</span>
+						<TechStackBadge name={`+${remainingTechStacks}`} size="xs" />
 					{/if}
 				</div>
 			{/if}

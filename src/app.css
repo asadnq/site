@@ -14,7 +14,7 @@
 	--font-display-2: 'Kalam', sans-serif;
 
 	--color-foreground: oklch(0% 0 0deg);
-
+	--color-background: light-dark(black, white);
 	--color-deep-sea-green-50: oklch(96.43% 0.032 182.94);
 	--color-deep-sea-green-100: oklch(91.33% 0.077 185.27);
 	--color-deep-sea-green-200: oklch(84.19% 0.136 186.71);
@@ -63,12 +63,26 @@
 		color: transparent;
 	}
 
-	.brutalist-border {
-		@apply border-4 border-black shadow-[5px_5px_0_0_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px];
-	}
-
 	.brutalist-shadow-xl {
 		@apply shadow-[10px_10px_0_0_rgba(0,0,0,1)];
+	}
+}
+
+@layer utilities {
+	.box-sm {
+		@apply border-foreground shadow-foreground flex size-8 items-center justify-center rounded-sm border-2 shadow-[2px_2px_0_0_#000];
+	}
+
+	.clickable-1 {
+		@apply transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px];
+	}
+
+	.clickable-2-xs {
+		@apply border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all duration-300;
+	}
+
+	.clickable-2-sm {
+		@apply border-4 border-black shadow-[5px_5px_0_0_rgba(0,0,0,1)] transition-all duration-300;
 	}
 }
 

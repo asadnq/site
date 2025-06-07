@@ -52,7 +52,7 @@
 		<a
 			{href}
 			style="transform: scale({scales[i].current}); opacity: {opacities[i].current}"
-			class="brutalist-border flex size-9 items-center justify-center border-2 border-black {iconContainerClassNames[
+			class="clickable-2-xs flex size-9 items-center justify-center border-2 border-black {iconContainerClassNames[
 				id
 			]} rounded-md p-1"
 		>

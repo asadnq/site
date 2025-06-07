@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/ui';
 	import type { Snippet } from 'svelte';
+	import BackButton from './BackButton.svelte';
 
 	let { children, className }: { children: Snippet; className?: string } = $props();
 </script>
@@ -11,5 +12,6 @@
 		className
 	)}
 >
+	<BackButton />
 	{@render children()}
 </section>

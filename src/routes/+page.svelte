@@ -47,7 +47,7 @@
 		</h1>
 	</div>
 	<p
-		class="text-balanced relative max-w-xs text-center text-sm font-semibold sm:max-w-max sm:text-xl"
+		class="text-foreground text-balanced relative max-w-xs text-center text-sm font-semibold sm:max-w-max sm:text-xl"
 	>
 		A{' '}
 		<span class="text-secondary-900 font-black"> full-stack developer </span>{' '}
@@ -58,7 +58,7 @@
 		{#each menu as { title, href, disabled }, i}
 			{#if disabled}
 				<span
-					class="brutalist-border min-w-[150px] rounded-md px-2 py-1 text-center transition-colors {menu[
+					class="clickable-2-xs min-w-[150px] rounded-md px-2 py-1 text-center transition-colors {menu[
 						i
 					].classNames} cursor-not-allowed border-2 border-black opacity-50"
 				>
@@ -67,7 +67,7 @@
 			{:else}
 				<a
 					{href}
-					class="brutalist-border min-w-[150px] rounded-md border-2 border-black px-2 py-1 text-center transition-colors {menu[
+					class="clickable-2-xs min-w-[150px] rounded-md border-2 border-black px-2 py-1 text-center transition-colors {menu[
 						i
 					].classNames}"
 				>

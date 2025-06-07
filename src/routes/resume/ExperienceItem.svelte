@@ -1,4 +1,5 @@
 <script lang="ts">
+	import TechStackBadge from '$lib/components/TechStackBadge.svelte';
 	import type { Experience } from '$lib/schemas';
 	import { formatDateRange, getDurationString } from '$lib/utils/misc';
 
@@ -38,8 +39,7 @@
 			<h4 class="text-base font-bold text-emerald-950">Tech Stack</h4>
 			<div class="flex flex-wrap gap-2">
 				{#each exp.techStack as tech}
-					<span class="badge bg-surface-800-200 text-surface-200-800 px-2 py-1 text-sm">{tech}</span
-					>
+					<TechStackBadge size="sm" name={tech} />
 				{/each}
 			</div>
 		</div>
