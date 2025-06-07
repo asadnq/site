@@ -341,7 +341,7 @@ h1 {
 
 /* Create a custom preset in your global stylesheet */
 .preset-gradient-one {
-	background-image: linear-gradient(to right, var(--color-primary-900), var(--color-primary-200));
+	background-image: lnear-gradient(to right, var(--color-primary-900), var(--color-primary-200));
 	color: var(--color-primary-contrast-500);
 }
 .preset-gradient-two {

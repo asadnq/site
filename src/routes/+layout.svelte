@@ -1,16 +1,11 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import { Tween } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
-	import { ArrowLeftIcon } from '@lucide/svelte';
 	import LightSwitch from '$lib/components/LightSwitch.svelte';
 
 	let { children } = $props();
 	const today = new Date();
 	const isRoot = $derived(page.url.pathname === '/');
-
-	const scaleTimeFn = Tween.of(() => 1.5, { duration: 300, easing: cubicOut });
 </script>
 
 <div class="flex min-h-screen flex-col">
