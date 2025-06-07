@@ -2,7 +2,7 @@
 	import { cn } from '$lib/utils/ui';
 	import { cva } from 'class-variance-authority';
 
-	const badgeVariants = cva('bg-background text-foreground rounded border-2 border-black font-bold', {
+	const badgeVariants = cva('bg-surface-50-950 text-surface-950-50 rounded border-2 border-surface-950-50 font-bold', {
 		variants: {
 			size: {
 				xs: 'px-1.5 py-0.5 text-xs',

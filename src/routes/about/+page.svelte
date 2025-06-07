@@ -1,14 +1,14 @@
 <script lang="ts">
 	import SectionCard from '$lib/components/SectionCard.svelte';
-	import { fly, scale, fade } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
 </script>
 
-<SectionCard className="bg-lime-200 text-lime-800">
+<SectionCard className="bg-lime-200 dark:bg-lime-800 text-lime-800 dark:text-lime-200">
 	<div class="grid grid-cols-1 gap-4 font-medium sm:grid-cols-3">
 		<div class="col-span-2 flex flex-col space-y-4 text-lg font-black sm:row-start-1">
 			<h2
 				in:fly={{ y: 25, opacity: 0, duration: 400 }}
-				class="text-2xl font-black text-black sm:text-3xl"
+				class="text-surface-950-50 text-2xl font-black sm:text-3xl"
 			>
 				Hi, I'm Asad! A full-stack developer based in Bandung, Indonesia 🇮🇩
 			</h2>
@@ -27,7 +27,7 @@
 			<p in:fly={{ y: 25, opacity: 0, duration: 400, delay: 600 }}>
 				Outside of work, I'm also active in local communities. I frequently attend local book club
 				meetings and coordinate{' '}
-				<a href="https://www.instagram.com/soekabahasa" class="font-bold text-blue-700 underline">
+				<a href="https://www.instagram.com/soekabahasa" class="font-bold text-blue-700 dark:text-blue-300 underline">
 					Soekabahasa
 				</a>, a foreign language conversation club, where I help organize events and improve member
 				experiences.
@@ -42,7 +42,7 @@
 			<img
 				src="/whats-this.png"
 				alt="Illustration"
-				class="brutalist-shadow-xl border-5 border-black size-32 rounded-3xl sm:size-48"
+				class="brutalist-shadow-xl border-surface-950-50 size-32 rounded-3xl border-5 sm:size-48"
 				in:scale={{ start: 2, duration: 500 }}
 			/>
 		</div>

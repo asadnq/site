@@ -15,7 +15,7 @@
 </svelte:head>
 
 <SectionCard className={projectColors[project.color]}>
-	<h1 class="text-4xl font-extrabold tracking-tight text-black">
+	<h1 class="text-surface-950-50 text-4xl font-extrabold tracking-tight">
 		{project.title}
 	</h1>
 
@@ -32,7 +32,7 @@
 	{/if}
 
 	<div>
-		<div class={cn('prose prose-slate max-w-none', projectColors[project.color])}>
+		<div class={cn('prose dark:prose-invert max-w-none', projectColors[project.color])}>
 			{@html project.content}
 		</div>
 	</div>

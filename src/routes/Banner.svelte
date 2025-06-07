@@ -10,7 +10,7 @@
 >
 	<div class="flex flex-col gap-y-4">
 		<span
-			class="text-foreground font-display-2 relative left-[-40px] text-2xl leading-loose font-bold"
+			class="text-surface-950-50 font-display-2 relative left-[-40px] text-2xl leading-loose font-bold"
 		>
 			👋 Hi there,
 		</span>

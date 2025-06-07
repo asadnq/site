@@ -16,7 +16,7 @@
 <a
 	href={`/projects/${slug}/`}
 	class={cn(
-		'group bg-surface-50 relative block h-full w-full rounded-xl border-[3px] border-black p-0.5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] md:max-w-[380px]',
+		'group bg-surface-50-950 clickable-1-lg relative block h-full w-full rounded-xl  p-0.5 md:max-w-[380px]',
 		projectColor
 	)}
 >
@@ -26,13 +26,13 @@
 			<img
 				src={heroImage}
 				alt={`Cover image for ${title}`}
-				class="mb-4 h-40 w-full rounded-md border-2 border-black object-cover"
+				class="border-surface-950-50 mb-4 h-40 w-full rounded-md border-2 object-cover"
 			/>
 		{/if}
 
 		<!-- Title & Description -->
 		<div class="space-y-3">
-			<h2 class="text-2xl font-extrabold text-black">{title}</h2>
+			<h2 class="text-surface-950-50 text-2xl font-extrabold">{title}</h2>
 			<p class="line-clamp-3 text-sm font-medium overflow-ellipsis">{description}</p>
 		</div>
 

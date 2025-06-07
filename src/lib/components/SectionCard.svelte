@@ -8,7 +8,7 @@
 
 <section
 	class={cn(
-		'flex flex-col space-y-5 rounded-none border-x-0 border-y-4 border-black px-4 py-6 sm:mx-2 sm:rounded-xl sm:border-x-4',
+		'flex flex-col space-y-5 rounded-none border-x-0 border-y-4 border-surface-950-50 px-4 py-6 sm:mx-2 sm:rounded-xl sm:border-x-4',
 		className
 	)}
 >

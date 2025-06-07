@@ -19,14 +19,14 @@
 
 	<!-- Title and Summary -->
 	<div>
-		<h3 class="text-xl font-black text-black">{exp.title}</h3>
+		<h3 class="text-surface-950-50 text-xl font-black">{exp.title}</h3>
 		<p class="mt-1 text-sm">{exp.summary}</p>
 	</div>
 
 	<!-- Responsibilities -->
 	<div class="flex flex-col gap-y-2">
-		<h4 class="text-base font-bold text-emerald-950">Responsibilities</h4>
-		<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
+		<h4 class="text-base font-bold text-emerald-950 dark:text-emerald-50">Responsibilities</h4>
+		<ul class="marker:text-surface-950-50 list-inside list-disc space-y-1 text-sm">
 			{#each exp.responsibilities as responsibility}
 				<li>{responsibility}</li>
 			{/each}
@@ -36,7 +36,7 @@
 	<!-- Tech Stack -->
 	{#if exp.techStack?.length}
 		<div class="flex flex-col gap-y-2">
-			<h4 class="text-base font-bold text-emerald-950">Tech Stack</h4>
+			<h4 class="text-base font-bold text-emerald-950 dark:text-emerald-50">Tech Stack</h4>
 			<div class="flex flex-wrap gap-2">
 				{#each exp.techStack as tech}
 					<TechStackBadge size="sm" name={tech} />
@@ -48,8 +48,8 @@
 	<!-- Projects -->
 	{#if exp.projects?.length}
 		<div class="flex flex-col gap-y-2">
-			<h4 class="text-base font-bold text-emerald-950">Projects</h4>
-			<ul class="marker:text-foreground list-inside list-disc space-y-1 text-sm">
+			<h4 class="text-base font-bold text-emerald-950 dark:text-emerald-50">Projects</h4>
+			<ul class="marker:text-surface-950-50 list-inside list-disc space-y-1 text-sm">
 				{#each exp.projects as project}
 					<li>{project}</li>
 				{/each}
