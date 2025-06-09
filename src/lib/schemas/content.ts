@@ -50,7 +50,8 @@ export const projectSchema = z.object({
 			invalid_type_error: 'Related companies must be an array of strings.'
 		})
 		.optional()
-		.describe('Companies associated with this project (optional).')
+		.describe('Companies associated with this project (optional).'),
+	projectType: z.enum(['personal', 'work']).default('work')
 });
 
 export const projectEntrySchema = projectSchema.extend({

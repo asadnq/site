@@ -16,7 +16,7 @@
 <a
 	href={`/projects/${slug}/`}
 	class={cn(
-		'group bg-surface-50-950 clickable-1-lg relative block h-full w-full rounded-xl  p-0.5 md:max-w-[380px]',
+		'group bg-surface-50-950 clickable-1-lg relative block h-full max-h-[354px] w-full  rounded-xl p-0.5 md:max-w-[380px]',
 		projectColor
 	)}
 >
