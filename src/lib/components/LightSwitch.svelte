@@ -14,6 +14,7 @@
 		const mode = event.checked ? 'dark' : 'light';
 		document.documentElement.setAttribute('data-mode', mode);
 		localStorage.setItem('mode', mode);
+		window.umami.track('theme-changed', { mode });
 		checked = event.checked;
 	};
 </script>
