@@ -27,9 +27,12 @@
 	];
 
 	const iconContainerClassNames: Record<ContactId, string> = {
-		github: 'bg-green-800 fill-white text-green-200 hover:bg-green-200 hover:text-green-800',
-		linkedin: 'bg-blue-800 fill-white text-blue-200 hover:bg-blue-200 hover:text-blue-800',
-		email: 'bg-orange-800 fill-white text-orange-200 hover:bg-orange-200 hover:text-orange-800'
+		github:
+			'bg-green-200 hover:bg-green-800 text-green-800 hover:text-green-200 dark:bg-green-800 dark:text-green-200 dark:hover:bg-green-200 dark:hover:text-green-800',
+		linkedin:
+			'bg-blue-200 hover:bg-blue-800 text-blue-800 hover:text-blue-200 dark:bg-blue-800 dark:text-blue-200 dark:hover:bg-blue-200 dark:hover:text-blue-800',
+		email:
+			'bg-orange-200 hover:bg-orange-800 text-orange-800 hover:text-orange-200 dark:bg-orange-800 dark:text-orange-200 dark:hover:bg-orange-200 dark:hover:text-orange-800'
 	};
 
 	// Create a tweened value for each contact animation
@@ -52,7 +55,7 @@
 		<a
 			{href}
 			style="transform: scale({scales[i].current}); opacity: {opacities[i].current}"
-			class="clickable-2-xs flex size-9 items-center justify-center border-2 border-surface-950-50 {iconContainerClassNames[
+			class="clickable-2-xs border-surface-950-50 flex size-9 items-center justify-center border-2 {iconContainerClassNames[
 				id
 			]} rounded-md p-1"
 		>
