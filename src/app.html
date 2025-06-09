@@ -28,9 +28,28 @@
 			content="My little web nook — for coding, reading, and learning"
 		/>
 		<meta name="twitter:image" content="/og-image.png" />
+		<!-- Umami -->
+		<script
+			async
+			defer
+			src="https://cloud.umami.is/script.js"
+			data-website-id="951abad2-4f57-4ace-8e14-49e74aaa5cdf"
+		></script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="transition-all duration-300">
 		<div style="display: contents">%sveltekit.body%</div>
+		<script type="text/javascript">
+			(() => {
+				const name = 'outbound-link-click';
+				document.querySelectorAll('a').forEach((a) => {
+					if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+						a.setAttribute('data-umami-event', name);
+						a.setAttribute('data-umami-event-url', a.href);
+					}
+				});
+			})();
+		</script>
 	</body>
 </html>
