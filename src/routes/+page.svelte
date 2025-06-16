@@ -76,6 +76,7 @@
 					class="clickable-2-xs border-surface-950-50 min-w-[150px] rounded-md border-2 px-2 py-1 text-center transition-colors {menu[
 						i
 					].classNames}"
+					data-sveltekit-preload-code="viewport"
 				>
 					{title}</a
 				>
