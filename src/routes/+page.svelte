@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Contact from '$lib/components/Contact.svelte';
-	const menu = [
+	const menu: {
+		title: string;
+		href: string;
+		classNames: string;
+		disabled?: boolean;
+	}[] = [
 		{
 			title: 'View my projects',
 			href: '/projects',
@@ -22,7 +27,6 @@
 		{
 			title: 'Read my Blog',
 			href: '/blog',
-			disabled: true,
 			classNames:
 				'bg-slate-200 text-slate-800 hover:bg-slate-800 hover:text-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-200 dark:hover:text-slate-800'
 		}
