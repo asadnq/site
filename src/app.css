@@ -394,3 +394,7 @@ h1 {
 	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-surface-500) 50%, transparent) inset;
 	backdrop-filter: blur(16px);
 }
+
+.highlighted {
+	background-color: var(--color-surface-500);
+}
