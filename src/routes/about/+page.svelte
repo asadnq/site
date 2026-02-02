@@ -16,12 +16,8 @@
 			<p in:fly={{ y: 25, opacity: 0, duration: 400, delay: 200 }}>
 				I'm an experienced full-stack with a proven background spanning over 5+ years, coupled with
 				valuable exposure to project and team management. My experience includes building and
-				maintaining web apps, server-side APIs, cross-platform mobile apps, and browser extensions.
-			</p>
-
-			<p in:fly={{ y: 25, opacity: 0, duration: 400, delay: 400 }}>
-				In addition, I’ve been actively learning DevOps to expand my skill set and am eager to gain
-				hands-on experience in this area.
+				maintaining web apps, server-side APIs, microservices, cross-platform mobile apps, and
+				browser extensions.
 			</p>
 
 			<p in:fly={{ y: 25, opacity: 0, duration: 400, delay: 600 }}>
